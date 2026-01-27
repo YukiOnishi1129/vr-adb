@@ -40,7 +40,6 @@ export default function PrivacyPage() {
                 アクセスログ（IPアドレス、ブラウザの種類、アクセス日時など）
               </li>
               <li>Cookie情報</li>
-              <li>お問い合わせフォームからの情報（メールアドレスなど）</li>
             </ul>
           </section>
 
@@ -93,19 +92,6 @@ export default function PrivacyPage() {
             <p>
               本ポリシーは、法令の変更やサービス内容の変更に伴い、予告なく変更されることがあります。
               変更後のプライバシーポリシーは、当サイトに掲載した時点で効力を生じるものとします。
-            </p>
-          </section>
-
-          <section>
-            <h2 className="mb-2 text-lg font-semibold text-foreground">
-              8. お問い合わせ
-            </h2>
-            <p>
-              プライバシーポリシーに関するお問い合わせは、
-              <Link href="/contact" className="text-primary hover:underline">
-                お問い合わせフォーム
-              </Link>
-              よりご連絡ください。
             </p>
           </section>
 
