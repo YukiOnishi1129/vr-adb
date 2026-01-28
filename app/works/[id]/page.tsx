@@ -64,9 +64,9 @@ export default async function WorkDetailPage({
     <div className="min-h-screen bg-background">
       <Header />
 
-      {/* セールヘッダーバナー */}
+      {/* セールヘッダーバナー（ヘッダーの下に固定） */}
       {isOnSale && work.discountPercent > 0 && (
-        <div className="sticky top-0 z-40 flex items-center justify-center gap-3 bg-red-600 py-2 text-white">
+        <div className="fixed left-0 right-0 top-14 z-40 flex items-center justify-center gap-3 bg-red-600 py-2 text-white">
           <span className="rounded bg-white px-2 py-0.5 text-sm font-bold text-red-600">
             {work.discountPercent}%OFF
           </span>
@@ -76,7 +76,10 @@ export default async function WorkDetailPage({
         </div>
       )}
 
-      <main className="mx-auto max-w-5xl px-4 py-6">
+      {/* セールバナー分のスペーサー */}
+      {isOnSale && work.discountPercent > 0 && <div className="h-10" />}
+
+      <main className="mx-auto max-w-5xl px-4 py-6 pb-24 lg:pb-6">
         {/* パンくず */}
         <nav className="mb-4 flex items-center gap-1 text-sm text-muted-foreground">
           <Link href="/" className="hover:text-foreground">
@@ -406,8 +409,8 @@ export default async function WorkDetailPage({
 
       <Footer />
 
-      {/* スマホ用固定フッターCTA */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-background/95 p-3 backdrop-blur-sm lg:hidden">
+      {/* スマホ用固定フッターCTA（ナビゲーションの上に配置） */}
+      <div className="fixed bottom-14 left-0 right-0 z-40 border-t border-border bg-background/95 p-3 backdrop-blur-sm lg:hidden">
         <div className="flex items-center gap-3">
           <div className="flex-1">
             {isOnSale ? (
@@ -447,8 +450,8 @@ export default async function WorkDetailPage({
         </div>
       </div>
 
-      {/* 固定フッター分のスペーサー（スマホのみ） */}
-      <div className="h-20 lg:hidden" />
+      {/* 固定フッター（CTA + ナビ）分のスペーサー（スマホのみ） */}
+      <div className="h-32 lg:hidden" />
     </div>
   );
 }

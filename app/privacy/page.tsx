@@ -8,7 +8,7 @@ export default function PrivacyPage() {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <main className="mx-auto max-w-3xl px-4 py-6">
+      <main className="mx-auto max-w-3xl px-4 py-6 pb-24 lg:pb-6">
         {/* パンくず */}
         <nav className="mb-6 flex items-center gap-1 text-sm text-muted-foreground">
           <Link href="/" className="hover:text-foreground">
