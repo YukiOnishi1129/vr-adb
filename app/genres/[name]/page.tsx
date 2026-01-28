@@ -3,34 +3,23 @@ import Link from "next/link";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { WorkCard } from "@/components/work-card";
-import { getWorks } from "@/lib/data-loader";
+import { getGenres, getWorksByGenre } from "@/lib/data-loader";
 
 interface Props {
   params: Promise<{ name: string }>;
 }
 
 export async function generateStaticParams() {
-  const works = await getWorks();
-
-  // 全ジャンルを収集
-  const genres = new Set<string>();
-  for (const work of works) {
-    for (const genre of work.genres) {
-      genres.add(genre);
-    }
-  }
-
-  return Array.from(genres).map((name) => ({
-    name: encodeURIComponent(name),
+  const genres = await getGenres();
+  return genres.map((g) => ({
+    name: g.name,
   }));
 }
 
 export default async function GenreDetailPage({ params }: Props) {
-  const { name } = await params;
-  const decodedName = decodeURIComponent(name);
-  const allWorks = await getWorks();
-
-  const works = allWorks.filter((w) => w.genres.includes(decodedName));
+  const { name: rawName } = await params;
+  const name = decodeURIComponent(rawName);
+  const works = await getWorksByGenre(name);
 
   return (
     <div className="min-h-screen bg-background">
@@ -47,7 +36,7 @@ export default async function GenreDetailPage({ params }: Props) {
             ジャンル
           </Link>
           <ChevronRight className="h-4 w-4" />
-          <span className="text-foreground">{decodedName}</span>
+          <span className="text-foreground">{name}</span>
         </nav>
 
         {/* ヘッダー */}
@@ -56,7 +45,7 @@ export default async function GenreDetailPage({ params }: Props) {
             <Tag className="h-6 w-6 text-primary" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold">{decodedName}</h1>
+            <h1 className="text-2xl font-bold">{name}</h1>
             <p className="text-sm text-muted-foreground">{works.length}作品</p>
           </div>
         </div>

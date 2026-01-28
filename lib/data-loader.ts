@@ -195,3 +195,88 @@ export async function getWorkById(contentId: string): Promise<Work | undefined> 
 export function clearCache(): void {
   worksCache = null;
 }
+
+// 女優/ジャンル情報の型
+export interface ActressInfo {
+  name: string;
+  workCount: number;
+  thumbnailUrl: string; // 代表作品のサムネイル
+}
+
+export interface GenreInfo {
+  name: string;
+  workCount: number;
+  thumbnailUrl: string;
+}
+
+/**
+ * 女優一覧を取得（作品数降順）
+ */
+export async function getActresses(): Promise<ActressInfo[]> {
+  const works = await getWorks();
+  const actressMap = new Map<string, { count: number; thumbnailUrl: string }>();
+
+  for (const work of works) {
+    for (const actress of work.actresses) {
+      if (!actress) continue;
+      const existing = actressMap.get(actress);
+      if (existing) {
+        existing.count++;
+      } else {
+        actressMap.set(actress, { count: 1, thumbnailUrl: work.thumbnailUrl });
+      }
+    }
+  }
+
+  return Array.from(actressMap.entries())
+    .map(([name, data]) => ({
+      name,
+      workCount: data.count,
+      thumbnailUrl: data.thumbnailUrl,
+    }))
+    .sort((a, b) => b.workCount - a.workCount);
+}
+
+/**
+ * 特定の女優の作品を取得
+ */
+export async function getWorksByActress(actressName: string): Promise<Work[]> {
+  const works = await getWorks();
+  return works.filter((work) => work.actresses.includes(actressName));
+}
+
+/**
+ * ジャンル一覧を取得（作品数降順）
+ */
+export async function getGenres(): Promise<GenreInfo[]> {
+  const works = await getWorks();
+  const genreMap = new Map<string, { count: number; thumbnailUrl: string }>();
+
+  for (const work of works) {
+    for (const genre of work.genres) {
+      if (!genre) continue;
+      const existing = genreMap.get(genre);
+      if (existing) {
+        existing.count++;
+      } else {
+        genreMap.set(genre, { count: 1, thumbnailUrl: work.thumbnailUrl });
+      }
+    }
+  }
+
+  return Array.from(genreMap.entries())
+    .map(([name, data]) => ({
+      name,
+      workCount: data.count,
+      thumbnailUrl: data.thumbnailUrl,
+    }))
+    .sort((a, b) => b.workCount - a.workCount);
+}
+
+/**
+ * 特定のジャンルの作品を取得
+ */
+export async function getWorksByGenre(genreName: string): Promise<Work[]> {
+  const works = await getWorks();
+  return works.filter((work) => work.genres.includes(genreName));
+}
