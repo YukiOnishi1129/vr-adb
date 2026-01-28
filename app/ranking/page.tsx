@@ -1,40 +1,25 @@
-import { ChevronRight, Crown, Medal, Star } from "lucide-react";
+import { ChevronRight, Crown } from "lucide-react";
 import Link from "next/link";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import { mockWorks } from "@/lib/mock-data";
+import { WorkCard } from "@/components/work-card";
+import { getWorks } from "@/lib/data-loader";
 
-export default function RankingPage() {
+export default async function RankingPage() {
+  const works = await getWorks();
   // 評価順にソート
-  const rankedWorks = [...mockWorks].sort((a, b) => b.rating - a.rating);
+  const rankedWorks = [...works].sort((a, b) => b.rating - a.rating);
 
-  const getRankIcon = (rank: number) => {
+  const getRankStyle = (rank: number) => {
     switch (rank) {
       case 1:
-        return <Crown className="h-6 w-6 text-yellow-500" />;
+        return "bg-yellow-500 text-white";
       case 2:
-        return <Medal className="h-6 w-6 text-gray-400" />;
+        return "bg-gray-400 text-white";
       case 3:
-        return <Medal className="h-6 w-6 text-amber-600" />;
+        return "bg-amber-600 text-white";
       default:
-        return (
-          <span className="flex h-6 w-6 items-center justify-center text-sm font-bold text-muted-foreground">
-            {rank}
-          </span>
-        );
-    }
-  };
-
-  const getRankBg = (rank: number) => {
-    switch (rank) {
-      case 1:
-        return "bg-yellow-500/10 border-yellow-500/30";
-      case 2:
-        return "bg-gray-400/10 border-gray-400/30";
-      case 3:
-        return "bg-amber-600/10 border-amber-600/30";
-      default:
-        return "bg-card border-border";
+        return "bg-primary text-white";
     }
   };
 
@@ -42,7 +27,7 @@ export default function RankingPage() {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <main className="mx-auto max-w-5xl px-4 py-6">
+      <main className="mx-auto max-w-5xl px-4 py-6 pb-24 lg:pb-6">
         {/* パンくず */}
         <nav className="mb-4 flex items-center gap-1 text-sm text-muted-foreground">
           <Link href="/" className="hover:text-foreground">
@@ -66,78 +51,25 @@ export default function RankingPage() {
         </div>
 
         {/* ランキング一覧 */}
-        <div className="space-y-3">
-          {rankedWorks.map((work, index) => {
-            const rank = index + 1;
-            const salePrice = work.discountRate
-              ? Math.floor(work.price * (1 - work.discountRate / 100))
-              : null;
-
-            return (
-              <Link
-                key={work.id}
-                href={`/works/${work.id}`}
-                className={`flex gap-4 rounded-lg border p-4 transition-colors hover:border-primary/50 ${getRankBg(rank)}`}
-              >
-                {/* 順位 */}
-                <div className="flex w-8 shrink-0 items-center justify-center">
-                  {getRankIcon(rank)}
-                </div>
-
-                {/* サムネイル */}
-                <div className="relative h-20 w-32 shrink-0 overflow-hidden rounded bg-muted">
-                  <img
-                    src={work.thumbnailUrl}
-                    alt={work.title}
-                    className="h-full w-full object-cover"
-                  />
-                  {work.discountRate && (
-                    <div className="absolute left-1 top-1 rounded bg-red-600 px-1.5 py-0.5 text-xs font-bold text-white">
-                      {work.discountRate}%OFF
-                    </div>
-                  )}
-                </div>
-
-                {/* 情報 */}
-                <div className="flex flex-1 flex-col justify-center">
-                  <h3 className="line-clamp-2 font-medium leading-tight">
-                    {work.title}
-                  </h3>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {work.actresses.join(", ")}
-                  </p>
-                  <div className="mt-2 flex items-center gap-4">
-                    <span className="flex items-center gap-1 text-sm">
-                      <Star className="h-4 w-4 fill-yellow-500 text-yellow-500" />
-                      {work.rating.toFixed(1)}
-                    </span>
-                    <span className="text-sm text-muted-foreground">
-                      {work.duration}分
-                    </span>
+        {rankedWorks.length > 0 ? (
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {rankedWorks.map((work, index) => {
+              const rank = index + 1;
+              return (
+                <div key={work.id} className="relative">
+                  <div
+                    className={`absolute -left-2 -top-2 z-10 flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold ${getRankStyle(rank)}`}
+                  >
+                    {rank}
                   </div>
+                  <WorkCard work={work} />
                 </div>
-
-                {/* 価格 */}
-                <div className="flex shrink-0 flex-col items-end justify-center">
-                  {salePrice ? (
-                    <>
-                      <span className="text-xs text-muted-foreground line-through">
-                        ¥{work.price.toLocaleString()}
-                      </span>
-                      <span className="text-lg font-bold text-red-500">
-                        ¥{salePrice.toLocaleString()}
-                      </span>
-                    </>
-                  ) : (
-                    <span className="text-lg font-bold">
-                      ¥{work.price.toLocaleString()}
-                    </span>
-                  )}
-                </div>
-              </Link>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        ) : (
+          <p className="text-muted-foreground">作品がありません。</p>
+        )}
       </main>
 
       <Footer />

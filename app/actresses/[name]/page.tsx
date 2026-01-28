@@ -1,37 +1,31 @@
 import { ChevronRight, User } from "lucide-react";
 import Link from "next/link";
-import { notFound } from "next/navigation";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { WorkCard } from "@/components/work-card";
-import { mockWorks, mockActresses } from "@/lib/mock-data";
+import { getActresses, getWorksByActress } from "@/lib/data-loader";
 
 interface Props {
   params: Promise<{ name: string }>;
 }
 
-export function generateStaticParams() {
-  return mockActresses.map((actress) => ({
-    name: encodeURIComponent(actress.name),
+export async function generateStaticParams() {
+  const actresses = await getActresses();
+  return actresses.map((a) => ({
+    name: a.name,
   }));
 }
 
 export default async function ActressDetailPage({ params }: Props) {
-  const { name } = await params;
-  const decodedName = decodeURIComponent(name);
-  const actress = mockActresses.find((a) => a.name === decodedName);
-
-  if (!actress) {
-    notFound();
-  }
-
-  const works = mockWorks.filter((w) => w.actresses.includes(decodedName));
+  const { name: rawName } = await params;
+  const name = decodeURIComponent(rawName);
+  const works = await getWorksByActress(name);
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
 
-      <main className="mx-auto max-w-5xl px-4 py-6">
+      <main className="mx-auto max-w-5xl px-4 py-6 pb-24 lg:pb-6">
         {/* パンくず */}
         <nav className="mb-4 flex items-center gap-1 text-sm text-muted-foreground">
           <Link href="/" className="hover:text-foreground">
@@ -42,26 +36,16 @@ export default async function ActressDetailPage({ params }: Props) {
             出演者
           </Link>
           <ChevronRight className="h-4 w-4" />
-          <span className="text-foreground">{decodedName}</span>
+          <span className="text-foreground">{name}</span>
         </nav>
 
         {/* ヘッダー */}
         <div className="mb-6 flex items-center gap-4">
-          <div className="h-20 w-20 overflow-hidden rounded-full bg-muted">
-            {actress.thumbnail ? (
-              <img
-                src={actress.thumbnail}
-                alt={actress.name}
-                className="h-full w-full object-cover"
-              />
-            ) : (
-              <div className="flex h-full w-full items-center justify-center">
-                <User className="h-10 w-10 text-muted-foreground/50" />
-              </div>
-            )}
+          <div className="flex h-20 w-20 items-center justify-center overflow-hidden rounded-full bg-muted">
+            <User className="h-10 w-10 text-muted-foreground/50" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold">{decodedName}</h1>
+            <h1 className="text-2xl font-bold">{name}</h1>
             <p className="text-sm text-muted-foreground">{works.length}作品</p>
           </div>
         </div>

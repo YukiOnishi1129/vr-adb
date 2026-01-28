@@ -49,6 +49,8 @@ jobs:
 
       - name: Build
         id: build
+        env:
+          R2_PUBLIC_DOMAIN: ${{ secrets.R2_PUBLIC_DOMAIN }}
         run: pnpm build
 
       - name: Collect build stats

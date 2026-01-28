@@ -1,56 +1,49 @@
-import { Glasses, Menu, Search } from "lucide-react";
 import Link from "next/link";
+import { SearchBox } from "./search-box";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--background)]/95 backdrop-blur">
-      <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2">
-          <Glasses className="h-6 w-6 text-[var(--primary)]" />
-          <span className="text-lg font-bold">VR-ADB</span>
+    <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
+      <div className="mx-auto flex h-14 max-w-5xl items-center gap-4 px-4">
+        <Link href="/" className="flex shrink-0 flex-col">
+          <div className="flex items-center gap-0.5">
+            <span className="text-lg font-bold text-primary md:text-xl">VR</span>
+            <span className="text-lg font-bold text-foreground md:text-xl">-ADB</span>
+          </div>
+          <span className="text-[9px] text-muted-foreground md:text-[10px]">
+            VR動画を探す検索ツール
+          </span>
         </Link>
 
-        <nav className="hidden items-center gap-6 md:flex">
+        {/* 検索ボックス */}
+        <SearchBox />
+
+        <nav className="hidden shrink-0 items-center gap-4 lg:flex">
           <Link
-            href="/"
-            className="text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)]"
+            href="/ranking"
+            className="text-sm text-muted-foreground hover:text-foreground"
           >
             ランキング
           </Link>
           <Link
             href="/sale"
-            className="text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)]"
+            className="text-sm text-muted-foreground hover:text-foreground"
           >
             セール
           </Link>
           <Link
             href="/actresses"
-            className="text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)]"
+            className="text-sm text-muted-foreground hover:text-foreground"
           >
             女優
           </Link>
           <Link
             href="/genres"
-            className="text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)]"
+            className="text-sm text-muted-foreground hover:text-foreground"
           >
             ジャンル
           </Link>
         </nav>
-
-        <div className="flex items-center gap-2">
-          <button
-            type="button"
-            className="rounded-lg p-2 hover:bg-[var(--secondary)]"
-          >
-            <Search className="h-5 w-5 text-[var(--muted-foreground)]" />
-          </button>
-          <button
-            type="button"
-            className="rounded-lg p-2 hover:bg-[var(--secondary)] md:hidden"
-          >
-            <Menu className="h-5 w-5 text-[var(--muted-foreground)]" />
-          </button>
-        </div>
       </div>
     </header>
   );
