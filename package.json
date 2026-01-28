@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "prebuild": "node scripts/prebuild-data.mjs",
+    "generate-search": "node scripts/generate-search-index.mjs",
     "dev": "next dev",
-    "build": "pnpm prebuild && next build",
+    "build": "pnpm prebuild && pnpm generate-search && next build",
     "serve": "npx serve@latest out -p 3000",
     "lint": "biome lint .",
     "format": "biome format --write .",
