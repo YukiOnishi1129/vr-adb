@@ -1,31 +1,36 @@
 import { ChevronRight, User } from "lucide-react";
 import Link from "next/link";
-import { notFound } from "next/navigation";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { WorkCard } from "@/components/work-card";
-import { mockWorks, mockActresses } from "@/lib/mock-data";
+import { getWorks } from "@/lib/data-loader";
 
 interface Props {
   params: Promise<{ name: string }>;
 }
 
-export function generateStaticParams() {
-  return mockActresses.map((actress) => ({
-    name: encodeURIComponent(actress.name),
+export async function generateStaticParams() {
+  const works = await getWorks();
+
+  // 全女優を収集
+  const actresses = new Set<string>();
+  for (const work of works) {
+    for (const actress of work.actresses) {
+      actresses.add(actress);
+    }
+  }
+
+  return Array.from(actresses).map((name) => ({
+    name: encodeURIComponent(name),
   }));
 }
 
 export default async function ActressDetailPage({ params }: Props) {
   const { name } = await params;
   const decodedName = decodeURIComponent(name);
-  const actress = mockActresses.find((a) => a.name === decodedName);
+  const allWorks = await getWorks();
 
-  if (!actress) {
-    notFound();
-  }
-
-  const works = mockWorks.filter((w) => w.actresses.includes(decodedName));
+  const works = allWorks.filter((w) => w.actresses.includes(decodedName));
 
   return (
     <div className="min-h-screen bg-background">
@@ -47,18 +52,8 @@ export default async function ActressDetailPage({ params }: Props) {
 
         {/* ヘッダー */}
         <div className="mb-6 flex items-center gap-4">
-          <div className="h-20 w-20 overflow-hidden rounded-full bg-muted">
-            {actress.thumbnail ? (
-              <img
-                src={actress.thumbnail}
-                alt={actress.name}
-                className="h-full w-full object-cover"
-              />
-            ) : (
-              <div className="flex h-full w-full items-center justify-center">
-                <User className="h-10 w-10 text-muted-foreground/50" />
-              </div>
-            )}
+          <div className="flex h-20 w-20 items-center justify-center overflow-hidden rounded-full bg-muted">
+            <User className="h-10 w-10 text-muted-foreground/50" />
           </div>
           <div>
             <h1 className="text-2xl font-bold">{decodedName}</h1>

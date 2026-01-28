@@ -1,31 +1,36 @@
 import { ChevronRight, Tag } from "lucide-react";
 import Link from "next/link";
-import { notFound } from "next/navigation";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { WorkCard } from "@/components/work-card";
-import { mockWorks, mockGenres } from "@/lib/mock-data";
+import { getWorks } from "@/lib/data-loader";
 
 interface Props {
   params: Promise<{ name: string }>;
 }
 
-export function generateStaticParams() {
-  return mockGenres.map((genre) => ({
-    name: encodeURIComponent(genre.name),
+export async function generateStaticParams() {
+  const works = await getWorks();
+
+  // 全ジャンルを収集
+  const genres = new Set<string>();
+  for (const work of works) {
+    for (const genre of work.genres) {
+      genres.add(genre);
+    }
+  }
+
+  return Array.from(genres).map((name) => ({
+    name: encodeURIComponent(name),
   }));
 }
 
 export default async function GenreDetailPage({ params }: Props) {
   const { name } = await params;
   const decodedName = decodeURIComponent(name);
-  const genre = mockGenres.find((g) => g.name === decodedName);
+  const allWorks = await getWorks();
 
-  if (!genre) {
-    notFound();
-  }
-
-  const works = mockWorks.filter((w) => w.genres.includes(decodedName));
+  const works = allWorks.filter((w) => w.genres.includes(decodedName));
 
   return (
     <div className="min-h-screen bg-background">

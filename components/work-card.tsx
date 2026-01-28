@@ -1,13 +1,11 @@
 import { Clock, Star } from "lucide-react";
 import Link from "next/link";
-import type { Work } from "@/lib/mock-data";
-import { Card, CardContent } from "@/components/ui/card";
+import type { Work } from "@/lib/data-loader";
 import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
 
 export function WorkCard({ work }: { work: Work }) {
-  const salePrice = work.discountRate
-    ? Math.floor(work.price * (1 - work.discountRate / 100))
-    : null;
+  const isOnSale = work.listPrice > 0 && work.price < work.listPrice;
 
   return (
     <Link href={`/works/${work.id}`}>
@@ -19,12 +17,12 @@ export function WorkCard({ work }: { work: Work }) {
             alt={work.title}
             className="h-full w-full object-cover transition-transform group-hover:scale-105"
           />
-          {work.discountRate && (
+          {isOnSale && work.discountPercent > 0 && (
             <Badge
               variant="destructive"
               className="absolute left-2 top-2 rounded-md"
             >
-              {work.discountRate}%OFF
+              {work.discountPercent}%OFF
             </Badge>
           )}
           <Badge
@@ -41,44 +39,62 @@ export function WorkCard({ work }: { work: Work }) {
             {work.title}
           </h3>
 
-          <p className="mt-1 text-xs text-muted-foreground">
-            {work.actresses.join(", ")}
-          </p>
+          {work.actresses.length > 0 && (
+            <p className="mt-1 text-xs text-muted-foreground">
+              {work.actresses.join(", ")}
+            </p>
+          )}
 
           <div className="mt-2 flex items-center gap-3 text-xs text-muted-foreground">
-            <span className="flex items-center gap-1">
-              <Star className="h-3 w-3 fill-yellow-500 text-yellow-500" />
-              {work.rating.toFixed(1)}
-            </span>
-            <span className="flex items-center gap-1">
-              <Clock className="h-3 w-3" />
-              {work.duration}分
-            </span>
+            {work.rating > 0 && (
+              <span className="flex items-center gap-1">
+                <Star className="h-3 w-3 fill-yellow-500 text-yellow-500" />
+                {work.rating.toFixed(1)}
+              </span>
+            )}
+            {work.duration > 0 && (
+              <span className="flex items-center gap-1">
+                <Clock className="h-3 w-3" />
+                {work.duration}分
+              </span>
+            )}
           </div>
 
           <div className="mt-2 flex items-center justify-between">
-            <div className="flex items-center gap-1">
-              {work.genres.slice(0, 2).map((genre) => (
-                <Badge key={genre} variant="secondary" className="text-xs">
-                  {genre}
-                </Badge>
-              ))}
-            </div>
+            {work.genres.length > 0 && (
+              <div className="flex items-center gap-1">
+                {work.genres.slice(0, 2).map((genre) => (
+                  <Badge key={genre} variant="secondary" className="text-xs">
+                    {genre}
+                  </Badge>
+                ))}
+              </div>
+            )}
             <div className="text-right">
-              {salePrice ? (
+              {isOnSale ? (
                 <div>
-                  <span className="text-xs text-muted-foreground line-through">
-                    ¥{work.price.toLocaleString()}
+                  <div className="flex items-center justify-end gap-1">
+                    <span className="text-xs text-muted-foreground line-through">
+                      ¥{work.listPrice.toLocaleString()}
+                    </span>
+                    <span className="rounded bg-red-600 px-1 py-0.5 text-xs font-bold text-white">
+                      {work.discountPercent}%OFF
+                    </span>
+                  </div>
+                  <span className="font-bold text-red-500">
+                    ¥{work.price.toLocaleString()}〜
                   </span>
-                  <span className="ml-1 font-bold text-red-500">
-                    ¥{salePrice.toLocaleString()}
-                  </span>
+                  {work.campaignEndDate && (
+                    <p className="text-xs text-muted-foreground">
+                      {work.campaignEndDate}
+                    </p>
+                  )}
                 </div>
-              ) : (
+              ) : work.price > 0 ? (
                 <span className="font-bold">
-                  ¥{work.price.toLocaleString()}
+                  ¥{work.price.toLocaleString()}〜
                 </span>
-              )}
+              ) : null}
             </div>
           </div>
         </CardContent>

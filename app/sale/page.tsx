@@ -3,16 +3,19 @@ import Link from "next/link";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { WorkCard } from "@/components/work-card";
-import { mockWorks } from "@/lib/mock-data";
+import { getWorks } from "@/lib/data-loader";
 
-export default function SalePage() {
-  // セール中の作品をフィルタ（割引率があるもの）
-  const saleWorks = mockWorks.filter((w) => w.discountRate && w.discountRate > 0);
+export default async function SalePage() {
+  const works = await getWorks();
+  // セール中の作品をフィルタ（price < listPrice）
+  const saleWorks = works.filter((w) => w.listPrice > 0 && w.price < w.listPrice);
 
   // 割引率順にソート
-  const sortedWorks = [...saleWorks].sort(
-    (a, b) => (b.discountRate || 0) - (a.discountRate || 0)
-  );
+  const sortedWorks = [...saleWorks].sort((a, b) => {
+    const discountA = a.listPrice > 0 ? (a.listPrice - a.price) / a.listPrice : 0;
+    const discountB = b.listPrice > 0 ? (b.listPrice - b.price) / b.listPrice : 0;
+    return discountB - discountA;
+  });
 
   return (
     <div className="min-h-screen bg-background">

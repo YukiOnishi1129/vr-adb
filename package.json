@@ -3,19 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prebuild": "node scripts/prebuild-data.mjs",
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "build": "pnpm prebuild && next build",
+    "serve": "npx serve@latest out -p 3000",
     "lint": "biome lint .",
     "format": "biome format --write .",
     "check": "biome check --write ."
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",
+    "apache-arrow": "^18.0.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.563.0",
     "next": "16.1.4",
+    "parquet-wasm": "^0.6.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "tailwind-merge": "^3.4.0"
