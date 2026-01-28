@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { FanzaLink } from "@/components/fanza-link";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { getWorks, getWorkById } from "@/lib/data-loader";
@@ -165,15 +166,15 @@ export default async function WorkDetailPage({
               </div>
 
               {/* 購入ボタン */}
-              <a
-                href={work.fanzaUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+              <FanzaLink
+                url={work.fanzaUrl}
+                contentId={work.id}
+                source="firstview_cta"
                 className="mt-4 flex w-full items-center justify-center gap-2 rounded-lg bg-primary py-3 font-bold text-primary-foreground transition-colors hover:bg-primary/90"
               >
                 FANZAで購入
                 <ExternalLink className="h-4 w-4" />
-              </a>
+              </FanzaLink>
             </div>
 
             {/* 再生時間・配信日 */}
@@ -283,15 +284,15 @@ export default async function WorkDetailPage({
               <p className="mb-3 text-center text-sm font-medium">
                 この作品をVRで体験してみませんか？
               </p>
-              <a
-                href={work.fanzaUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+              <FanzaLink
+                url={work.fanzaUrl}
+                contentId={work.id}
+                source="mid_cta"
                 className="flex w-full items-center justify-center gap-2 rounded-lg bg-primary py-3 font-bold text-primary-foreground transition-colors hover:bg-primary/90"
               >
                 FANZAで詳細を見る
                 <ExternalLink className="h-4 w-4" />
-              </a>
+              </FanzaLink>
             </div>
 
             {/* 全サンプル画像（1カラム縦並び） */}
@@ -361,15 +362,15 @@ export default async function WorkDetailPage({
                   )}
                 </div>
 
-                <a
-                  href={work.fanzaUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <FanzaLink
+                  url={work.fanzaUrl}
+                  contentId={work.id}
+                  source="sidebar_cta"
                   className="mt-4 flex w-full items-center justify-center gap-2 rounded-lg bg-primary py-3 font-bold text-primary-foreground transition-colors hover:bg-primary/90"
                 >
                   FANZAで購入
                   <ExternalLink className="h-4 w-4" />
-                </a>
+                </FanzaLink>
 
                 <p className="mt-3 text-center text-xs text-muted-foreground">
                   ※FANZAの商品ページへ移動します
@@ -438,15 +439,15 @@ export default async function WorkDetailPage({
               </div>
             )}
           </div>
-          <a
-            href={work.fanzaUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <FanzaLink
+            url={work.fanzaUrl}
+            contentId={work.id}
+            source="fixed_cta"
             className="flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-bold text-primary-foreground"
           >
             FANZAで見る
             <ExternalLink className="h-4 w-4" />
-          </a>
+          </FanzaLink>
         </div>
       </div>
 
