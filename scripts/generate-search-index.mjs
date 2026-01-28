@@ -131,9 +131,15 @@ function convertToSearchItem(work) {
 async function main() {
   console.log("=== VR-ADB: Generating Search Index ===");
 
-  // 作品データを取得（works_test.parquet を使用）
-  const works = await fetchParquet("works_test.parquet");
-  console.log(`Found ${works.length} works`);
+  let works = [];
+  try {
+    // 作品データを取得（works_test.parquet を使用）
+    works = await fetchParquet("works_test.parquet");
+    console.log(`Found ${works.length} works`);
+  } catch (error) {
+    console.warn(`⚠ Failed to fetch parquet: ${error.message}`);
+    console.log("Creating empty search index...");
+  }
 
   // 検索インデックスに変換
   const searchIndex = works.map(convertToSearchItem);
