@@ -24,6 +24,7 @@ function searchItemToWork(item: SearchItem): Work {
     title: item.t,
     thumbnailUrl: item.img,
     sampleImages: [],
+    description: null,
     actresses: item.ac || [],
     maker: item.mk || "",
     releaseDate: item.rel || "",
@@ -35,11 +36,22 @@ function searchItemToWork(item: SearchItem): Work {
     discountPercent: typeof item.dr === "number" ? item.dr : 0,
     campaignTitle: null,
     campaignEndDate: null,
+    saleEndDate: null,
     vrType: "VR",
     genres: item.g || [],
-    summary: "",
+    // AI生成コンテンツ
     aiReview: null,
+    aiSummary: null,
+    aiRecommendReason: null,
+    aiAppealPoints: null,
+    aiTargetAudience: null,
+    aiWarnings: null,
+    aiTags: [],
+    // VR特有
+    fetishTags: [],
+    situations: [],
     fanzaUrl: "",
+    rankingPosition: typeof item.rk === "number" ? item.rk : null,
   };
 }
 

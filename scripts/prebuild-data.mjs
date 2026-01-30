@@ -95,9 +95,10 @@ async function main() {
   mkdirSync(CACHE_DIR, { recursive: true });
 
   // VR-ADB用Parquetファイル
-  // 現在はworks_test.parquetのみ（本番ではworks.parquetに変更）
   const files = [
-    { parquet: "works_test.parquet", json: "works.json" },
+    { parquet: "works.parquet", json: "works.json" },
+    { parquet: "actresses.parquet", json: "actresses.json" },
+    { parquet: "makers.parquet", json: "makers.json" },
   ];
 
   // BigIntをNumberに変換するreplacer

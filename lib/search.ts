@@ -1,6 +1,6 @@
 // 検索インデックスの型（軽量化のため短いキー名を使用）
 export type SearchItem = {
-  id: string; // content_id
+  id: string; // fanza_product_id
   t: string; // タイトル
   ac: string[]; // 女優リスト
   g: string[]; // ジャンルリスト
@@ -13,6 +13,7 @@ export type SearchItem = {
   rc: number | null; // レビュー件数
   rel: string; // 配信日
   dur: number | null; // 再生時間（分）
+  rk: number | null; // ランキング順位
 };
 
 // 簡易検索（サジェスト用）

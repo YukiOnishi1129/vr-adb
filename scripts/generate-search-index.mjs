@@ -92,39 +92,46 @@ async function fetchParquet(filename) {
  * VrWork → SearchItem 変換
  */
 function convertToSearchItem(work) {
-  // 価格をパース
-  const parsePrice = (p) => {
-    if (typeof p === "number") return p;
-    if (typeof p === "string") {
-      const match = p.match(/\d+/);
-      return match ? parseInt(match[0], 10) : 0;
-    }
-    return 0;
-  };
+  const price = work.sale_price || work.price || 0;
+  const listPrice = work.price || 0;
 
-  const price = parsePrice(work.price);
-  const listPrice = parsePrice(work.list_price);
-
-  // 割引率を計算
-  let discountRate = null;
-  if (listPrice > 0 && price < listPrice) {
+  // 割引率
+  let discountRate = work.discount_rate || null;
+  if (!discountRate && listPrice > 0 && price < listPrice) {
     discountRate = Math.round(((listPrice - price) / listPrice) * 100);
   }
 
+  // actress_namesをパース（配列かJSON文字列）
+  let actresses = [];
+  if (work.actress_names) {
+    if (Array.isArray(work.actress_names)) {
+      actresses = work.actress_names;
+    }
+  }
+
+  // genresをパース
+  let genres = [];
+  if (work.genres) {
+    if (Array.isArray(work.genres)) {
+      genres = work.genres;
+    }
+  }
+
   return {
-    id: work.content_id,
+    id: work.fanza_product_id,
     t: work.title, // タイトル
-    ac: work.actresses || [], // 女優リスト
-    g: work.genres || [], // ジャンルリスト
-    mk: work.maker_name || "", // メーカー
+    ac: actresses, // 女優リスト
+    g: genres, // ジャンルリスト
+    mk: "", // メーカー（TODO: makers.jsonから取得）
     p: price, // 現在価格
     lp: listPrice, // 定価
     dr: discountRate, // 割引率
     img: work.thumbnail_url || "", // サムネイルURL
-    rt: work.review_average || null, // 評価
+    rt: work.rating || null, // 評価
     rc: work.review_count || null, // レビュー件数
     rel: work.release_date || "", // 配信日
     dur: work.duration_minutes || null, // 再生時間
+    rk: work.ranking_position || null, // ランキング順位
   };
 }
 
@@ -133,8 +140,8 @@ async function main() {
 
   let works = [];
   try {
-    // 作品データを取得（works_test.parquet を使用）
-    works = await fetchParquet("works_test.parquet");
+    // 作品データを取得
+    works = await fetchParquet("works.parquet");
     console.log(`Found ${works.length} works`);
   } catch (error) {
     console.warn(`⚠ Failed to fetch parquet: ${error.message}`);
