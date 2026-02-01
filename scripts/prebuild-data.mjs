@@ -99,6 +99,10 @@ async function main() {
     { parquet: "works.parquet", json: "works.json" },
     { parquet: "actresses.parquet", json: "actresses.json" },
     { parquet: "makers.parquet", json: "makers.json" },
+    { parquet: "actress_features.parquet", json: "actress_features.json" },
+    { parquet: "sale_features.parquet", json: "sale_features.json" },
+    { parquet: "daily_recommendations.parquet", json: "daily_recommendations.json" },
+    { parquet: "feature_recommendations.parquet", json: "feature_recommendations.json" },
   ];
 
   // BigIntをNumberに変換するreplacer

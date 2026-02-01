@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { HorizontalScrollSection } from "@/components/horizontal-scroll-section";
 import { SaleBanner } from "@/components/sale-banner";
+import { FeaturedBanners } from "@/components/featured-banners";
 import { Badge } from "@/components/ui/badge";
 import {
   getWorksByRanking,
@@ -13,6 +14,10 @@ import {
   getActresses,
   getGenres,
   getGenreRankingWorks,
+  getLatestSaleFeature,
+  getLatestDailyRecommendation,
+  getFeatureRecommendations,
+  getActressFeatures,
 } from "@/lib/data-loader";
 
 export default async function HomePage() {
@@ -25,6 +30,10 @@ export default async function HomePage() {
     newWorks,
     actresses,
     genres,
+    saleFeature,
+    dailyRecommendation,
+    featureRecommendations,
+    actressFeatures,
   ] = await Promise.all([
     getWorksByRanking(),
     getSaleWorks(),
@@ -33,14 +42,18 @@ export default async function HomePage() {
     getNewWorks(12),
     getActresses(),
     getGenres(),
+    getLatestSaleFeature(),
+    getLatestDailyRecommendation(),
+    getFeatureRecommendations(),
+    getActressFeatures(),
   ]);
 
-  // 人気ジャンルのランキング（中出し、痴女など）
-  const popularGenres = genres.slice(0, 5);
+  // 性癖系ジャンルのランキング（人気のある性癖を手動で指定）
+  const fetishGenreNames = ["中出し", "痴女", "巨乳", "人妻", "女子校生"];
   const genreRankings = await Promise.all(
-    popularGenres.map(async (genre) => ({
-      genre: genre.name,
-      works: await getGenreRankingWorks(genre.name, 12),
+    fetishGenreNames.map(async (genreName) => ({
+      genre: genreName,
+      works: await getGenreRankingWorks(genreName, 12),
     }))
   );
 
@@ -51,6 +64,15 @@ export default async function HomePage() {
       <main className="mx-auto max-w-5xl px-4 py-6 pb-24 lg:pb-6">
         {/* セールバナー */}
         {saleWorks.length > 0 && <SaleBanner saleWorks={saleWorks} />}
+
+        {/* 特集バナー: 今日のおすすめ/セール特集 + 性癖/女優特集カルーセル */}
+        <FeaturedBanners
+          saleFeature={saleFeature}
+          saleThumbnailUrl={saleWorks[0]?.thumbnailUrl}
+          dailyRecommendation={dailyRecommendation}
+          features={featureRecommendations}
+          actressFeatures={actressFeatures}
+        />
 
         {/* VRランキング（横スクロール＋金銀銅バッジ） */}
         {rankingWorks.length > 0 && (
@@ -104,7 +126,7 @@ export default async function HomePage() {
           />
         )}
 
-        {/* ジャンル別ランキング */}
+        {/* 性癖別ランキング（人気ジャンル） */}
         {genreRankings.map(
           ({ genre, works }) =>
             works.length > 0 && (

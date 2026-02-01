@@ -575,10 +575,10 @@ export default async function WorkDetailPage({
             url={work.fanzaUrl}
             contentId={work.id}
             source="fixed_cta"
-            className={`flex items-center gap-2 rounded-lg px-6 py-3 font-bold text-white ${isOnSale ? "bg-orange-500" : "bg-primary"}`}
+            className={`flex items-center gap-2 rounded-lg px-4 py-3 font-bold text-white whitespace-nowrap ${isOnSale ? "bg-orange-500" : "bg-primary"}`}
           >
             FANZAで見る
-            <ExternalLink className="h-4 w-4" />
+            <ExternalLink className="h-4 w-4 shrink-0" />
           </FanzaLink>
         </div>
       </div>

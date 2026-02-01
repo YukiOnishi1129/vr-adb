@@ -13,6 +13,10 @@ const CACHE_DIR = join(process.cwd(), ".cache/data");
 
 // キャッシュ用
 let worksCache: VrWork[] | null = null;
+let actressFeaturesCache: ActressFeature[] | null = null;
+let saleFeaturesCache: SaleFeature[] | null = null;
+let dailyRecommendationsCache: DailyRecommendation[] | null = null;
+let featureRecommendationsCache: FeatureRecommendation[] | null = null;
 
 // VR作品の型定義（R2 Parquetから取得した生データ）
 export interface VrWork {
@@ -458,4 +462,502 @@ export async function getGenreRankingWorks(
       return b.rating - a.rating;
     })
     .slice(0, limit);
+}
+
+// =====================================================
+// 女優特集関連
+// =====================================================
+
+// 女優特集の型定義（DBテーブルと対応）
+export interface ActressFeature {
+  id: number;
+  actress_id: number;
+  name: string;
+  slug: string;
+  headline: string | null;
+  description: string | null;
+  representative_work_id: number | null;
+  representative_thumbnail_url: string | null;
+  recommended_works: RecommendedWork[] | string | null;
+  sale_works: SaleWork[] | string | null;
+  total_work_count: number;
+  solo_work_count: number;
+  avg_rating: number | null;
+  sale_count: number;
+  fanza_ranking: number | null;
+  is_active: number;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface RecommendedWork {
+  work_id: number;
+  title: string;
+  reason: string;
+  target_audience: string;
+  thumbnail_url: string | null;
+}
+
+export interface SaleWork {
+  work_id: number;
+  title: string;
+  discount_rate: number;
+  thumbnail_url: string | null;
+}
+
+// フロント用の女優特集型
+export interface ActressFeatureView {
+  id: number;
+  actressId: number;
+  name: string;
+  slug: string;
+  headline: string;
+  description: string;
+  representativeThumbnailUrl: string | null;
+  recommendedWorks: RecommendedWork[];
+  saleWorks: SaleWork[];
+  totalWorkCount: number;
+  soloWorkCount: number;
+  avgRating: number | null;
+  saleCount: number;
+  fanzaRanking: number | null;
+  updatedAt: string;
+}
+
+/**
+ * ActressFeatureをフロント用に変換
+ */
+function convertToActressFeatureView(feature: ActressFeature): ActressFeatureView {
+  // recommended_worksをパース
+  let recommendedWorks: RecommendedWork[] = [];
+  if (feature.recommended_works) {
+    if (typeof feature.recommended_works === "string") {
+      try {
+        recommendedWorks = JSON.parse(feature.recommended_works);
+      } catch {
+        recommendedWorks = [];
+      }
+    } else {
+      recommendedWorks = feature.recommended_works;
+    }
+  }
+
+  // sale_worksをパース
+  let saleWorks: SaleWork[] = [];
+  if (feature.sale_works) {
+    if (typeof feature.sale_works === "string") {
+      try {
+        saleWorks = JSON.parse(feature.sale_works);
+      } catch {
+        saleWorks = [];
+      }
+    } else {
+      saleWorks = feature.sale_works;
+    }
+  }
+
+  return {
+    id: feature.id,
+    actressId: feature.actress_id,
+    name: feature.name,
+    slug: feature.slug,
+    headline: feature.headline || `${feature.name}のVR特集`,
+    description: feature.description || `${feature.name}のVR作品を厳選してお届け。`,
+    representativeThumbnailUrl: feature.representative_thumbnail_url,
+    recommendedWorks,
+    saleWorks,
+    totalWorkCount: feature.total_work_count,
+    soloWorkCount: feature.solo_work_count,
+    avgRating: feature.avg_rating,
+    saleCount: feature.sale_count,
+    fanzaRanking: feature.fanza_ranking,
+    updatedAt: feature.updated_at,
+  };
+}
+
+/**
+ * 女優特集データを取得（キャッシュ付き）
+ */
+async function getRawActressFeatures(): Promise<ActressFeature[]> {
+  if (actressFeaturesCache === null) {
+    actressFeaturesCache = loadJson<ActressFeature>("actress_features.json");
+    console.log(`Loaded ${actressFeaturesCache.length} actress features from cache`);
+  }
+  return actressFeaturesCache;
+}
+
+/**
+ * 女優特集一覧を取得（ランキング順）
+ */
+export async function getActressFeatures(): Promise<ActressFeatureView[]> {
+  const rawFeatures = await getRawActressFeatures();
+  return rawFeatures
+    .filter((f) => f.is_active === 1)
+    .sort((a, b) => (a.fanza_ranking || 999) - (b.fanza_ranking || 999))
+    .map(convertToActressFeatureView);
+}
+
+/**
+ * 女優特集を名前で取得
+ */
+export async function getActressFeatureByName(name: string): Promise<ActressFeatureView | undefined> {
+  const rawFeatures = await getRawActressFeatures();
+  const feature = rawFeatures.find((f) => f.name === name && f.is_active === 1);
+  return feature ? convertToActressFeatureView(feature) : undefined;
+}
+
+/**
+ * 女優特集をslugで取得
+ */
+export async function getActressFeatureBySlug(slug: string): Promise<ActressFeatureView | undefined> {
+  const rawFeatures = await getRawActressFeatures();
+  const feature = rawFeatures.find((f) => f.slug === slug && f.is_active === 1);
+  return feature ? convertToActressFeatureView(feature) : undefined;
+}
+
+/**
+ * 作品IDリストから作品を取得
+ */
+export async function getWorksByIds(ids: string[]): Promise<Work[]> {
+  const works = await getWorks();
+  const idSet = new Set(ids);
+  return works.filter((work) => idSet.has(work.id));
+}
+
+// =====================================================
+// セール特集関連
+// =====================================================
+
+// セール特集の型定義（DBテーブルと対応）
+export interface SaleFeature {
+  id: number;
+  target_date: string;
+  main_headline: string | null;
+  main_description: string | null;
+  featured_work_id: number | null;
+  featured_thumbnail_url: string | null;
+  sub1_work_id: number | null;
+  sub1_thumbnail_url: string | null;
+  sub2_work_id: number | null;
+  sub2_thumbnail_url: string | null;
+  cheapest_work_ids: string | null;
+  high_discount_work_ids: string | null;
+  high_rating_work_ids: string | null;
+  total_sale_count: number;
+  max_discount_rate: number;
+  avg_discount_rate: number | null;
+  created_at: string;
+  updated_at: string;
+}
+
+// フロント用のセール特集型
+export interface SaleFeatureView {
+  id: number;
+  targetDate: string;
+  mainHeadline: string;
+  mainDescription: string;
+  featuredWorkId: number | null;
+  featuredThumbnailUrl: string | null;
+  sub1WorkId: number | null;
+  sub1ThumbnailUrl: string | null;
+  sub2WorkId: number | null;
+  sub2ThumbnailUrl: string | null;
+  cheapestWorkIds: number[];
+  highDiscountWorkIds: number[];
+  highRatingWorkIds: number[];
+  totalSaleCount: number;
+  maxDiscountRate: number;
+  avgDiscountRate: number;
+  updatedAt: string;
+}
+
+/**
+ * SaleFeatureをフロント用に変換
+ */
+function convertToSaleFeatureView(feature: SaleFeature): SaleFeatureView {
+  const parseIds = (value: string | null): number[] => {
+    if (!value) return [];
+    try {
+      const parsed = JSON.parse(value);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch {
+      return [];
+    }
+  };
+
+  return {
+    id: feature.id,
+    targetDate: feature.target_date,
+    mainHeadline: feature.main_headline || "本日のセール特集",
+    mainDescription: feature.main_description || "お得なVR作品をお見逃しなく！",
+    featuredWorkId: feature.featured_work_id,
+    featuredThumbnailUrl: feature.featured_thumbnail_url,
+    sub1WorkId: feature.sub1_work_id,
+    sub1ThumbnailUrl: feature.sub1_thumbnail_url,
+    sub2WorkId: feature.sub2_work_id,
+    sub2ThumbnailUrl: feature.sub2_thumbnail_url,
+    cheapestWorkIds: parseIds(feature.cheapest_work_ids),
+    highDiscountWorkIds: parseIds(feature.high_discount_work_ids),
+    highRatingWorkIds: parseIds(feature.high_rating_work_ids),
+    totalSaleCount: feature.total_sale_count,
+    maxDiscountRate: feature.max_discount_rate,
+    avgDiscountRate: feature.avg_discount_rate || 0,
+    updatedAt: feature.updated_at,
+  };
+}
+
+/**
+ * セール特集データを取得（キャッシュ付き）
+ */
+async function getRawSaleFeatures(): Promise<SaleFeature[]> {
+  if (saleFeaturesCache === null) {
+    saleFeaturesCache = loadJson<SaleFeature>("sale_features.json");
+    console.log(`Loaded ${saleFeaturesCache.length} sale features from cache`);
+  }
+  return saleFeaturesCache;
+}
+
+/**
+ * 最新のセール特集を取得
+ */
+export async function getLatestSaleFeature(): Promise<SaleFeatureView | null> {
+  const rawFeatures = await getRawSaleFeatures();
+  if (rawFeatures.length === 0) return null;
+
+  // 日付降順でソートして最新を取得
+  const sorted = [...rawFeatures].sort(
+    (a, b) => b.target_date.localeCompare(a.target_date)
+  );
+  return convertToSaleFeatureView(sorted[0]);
+}
+
+/**
+ * セール特集一覧を取得
+ */
+export async function getSaleFeatures(): Promise<SaleFeatureView[]> {
+  const rawFeatures = await getRawSaleFeatures();
+  return rawFeatures
+    .sort((a, b) => b.target_date.localeCompare(a.target_date))
+    .map(convertToSaleFeatureView);
+}
+
+// =====================================================
+// 日次おすすめ関連
+// =====================================================
+
+// 日次おすすめの型定義（DBテーブルと対応）
+export interface DailyRecommendation {
+  id: number;
+  target_date: string;
+  headline: string | null;
+  description: string | null;
+  recommended_works: DailyRecommendedWork[] | string | null;
+  total_works_count: number;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface DailyRecommendedWork {
+  work_id: number;
+  reason: string;
+  target_audience: string;
+  thumbnail_url?: string;
+}
+
+// フロント用の日次おすすめ型
+export interface DailyRecommendationView {
+  id: number;
+  targetDate: string;
+  headline: string;
+  description: string;
+  recommendedWorks: DailyRecommendedWork[];
+  totalWorksCount: number;
+  updatedAt: string;
+}
+
+/**
+ * DailyRecommendationをフロント用に変換
+ */
+function convertToDailyRecommendationView(rec: DailyRecommendation): DailyRecommendationView {
+  let recommendedWorks: DailyRecommendedWork[] = [];
+  if (rec.recommended_works) {
+    if (typeof rec.recommended_works === "string") {
+      try {
+        recommendedWorks = JSON.parse(rec.recommended_works);
+      } catch {
+        recommendedWorks = [];
+      }
+    } else if (Array.isArray(rec.recommended_works)) {
+      recommendedWorks = rec.recommended_works;
+    }
+  }
+
+  return {
+    id: rec.id,
+    targetDate: rec.target_date,
+    headline: rec.headline || "今日のおすすめVR",
+    description: rec.description || "本日のおすすめVR作品をお届け！",
+    recommendedWorks,
+    totalWorksCount: rec.total_works_count,
+    updatedAt: rec.updated_at,
+  };
+}
+
+/**
+ * 日次おすすめデータを取得（キャッシュ付き）
+ */
+async function getRawDailyRecommendations(): Promise<DailyRecommendation[]> {
+  if (dailyRecommendationsCache === null) {
+    dailyRecommendationsCache = loadJson<DailyRecommendation>("daily_recommendations.json");
+    console.log(`Loaded ${dailyRecommendationsCache.length} daily recommendations from cache`);
+  }
+  return dailyRecommendationsCache;
+}
+
+/**
+ * 最新の日次おすすめを取得
+ */
+export async function getLatestDailyRecommendation(): Promise<DailyRecommendationView | null> {
+  const rawRecs = await getRawDailyRecommendations();
+  if (rawRecs.length === 0) return null;
+
+  // 日付降順でソートして最新を取得
+  const sorted = [...rawRecs].sort(
+    (a, b) => b.target_date.localeCompare(a.target_date)
+  );
+  return convertToDailyRecommendationView(sorted[0]);
+}
+
+/**
+ * 日次おすすめ一覧を取得
+ */
+export async function getDailyRecommendations(): Promise<DailyRecommendationView[]> {
+  const rawRecs = await getRawDailyRecommendations();
+  return rawRecs
+    .sort((a, b) => b.target_date.localeCompare(a.target_date))
+    .map(convertToDailyRecommendationView);
+}
+
+// =====================================================
+// ジャンル特集関連
+// =====================================================
+
+// ジャンル特集の型定義（DBテーブルと対応）
+export interface FeatureRecommendation {
+  id: number;
+  slug: string;
+  name: string;
+  headline: string | null;
+  description: string | null;
+  recommended_works: FeatureRecommendedWork[] | string | null;
+  thumbnail_url: string | null;
+  work_count: number;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface FeatureRecommendedWork {
+  work_id: number;
+  reason: string;
+  target_audience: string;
+  thumbnail_url?: string;
+}
+
+// フロント用のジャンル特集型
+export interface FeatureRecommendationView {
+  id: number;
+  slug: string;
+  name: string;
+  headline: string;
+  description: string;
+  recommendedWorks: FeatureRecommendedWork[];
+  thumbnailUrl: string | null;
+  workCount: number;
+  updatedAt: string;
+}
+
+/**
+ * FeatureRecommendationをフロント用に変換
+ */
+function convertToFeatureRecommendationView(feature: FeatureRecommendation): FeatureRecommendationView {
+  let recommendedWorks: FeatureRecommendedWork[] = [];
+  if (feature.recommended_works) {
+    if (typeof feature.recommended_works === "string") {
+      try {
+        recommendedWorks = JSON.parse(feature.recommended_works);
+      } catch {
+        recommendedWorks = [];
+      }
+    } else if (Array.isArray(feature.recommended_works)) {
+      recommendedWorks = feature.recommended_works;
+    }
+  }
+
+  return {
+    id: feature.id,
+    slug: feature.slug,
+    name: feature.name,
+    headline: feature.headline || `${feature.name}のVR特集`,
+    description: feature.description || `${feature.name}好きに贈るVR作品特集`,
+    recommendedWorks,
+    thumbnailUrl: feature.thumbnail_url,
+    workCount: feature.work_count,
+    updatedAt: feature.updated_at,
+  };
+}
+
+/**
+ * ジャンル特集データを取得（キャッシュ付き）
+ */
+async function getRawFeatureRecommendations(): Promise<FeatureRecommendation[]> {
+  if (featureRecommendationsCache === null) {
+    featureRecommendationsCache = loadJson<FeatureRecommendation>("feature_recommendations.json");
+    console.log(`Loaded ${featureRecommendationsCache.length} feature recommendations from cache`);
+  }
+  return featureRecommendationsCache;
+}
+
+/**
+ * ジャンル特集一覧を取得
+ */
+export async function getFeatureRecommendations(): Promise<FeatureRecommendationView[]> {
+  const rawFeatures = await getRawFeatureRecommendations();
+  return rawFeatures.map(convertToFeatureRecommendationView);
+}
+
+/**
+ * ジャンル特集をslugで取得
+ */
+export async function getFeatureRecommendationBySlug(slug: string): Promise<FeatureRecommendationView | null> {
+  const rawFeatures = await getRawFeatureRecommendations();
+  const feature = rawFeatures.find((f) => f.slug === slug);
+  return feature ? convertToFeatureRecommendationView(feature) : null;
+}
+
+/**
+ * 全てのジャンル特集slugを取得（静的生成用）
+ */
+export async function getAllFeatureSlugs(): Promise<string[]> {
+  const rawFeatures = await getRawFeatureRecommendations();
+  return rawFeatures.map((f) => f.slug);
+}
+
+/**
+ * 数値のwork_idからfanza_product_idを引いて作品を取得
+ */
+export async function getWorkByNumericId(numericId: number): Promise<Work | undefined> {
+  const rawWorks = await getRawWorks();
+  const vr = rawWorks.find((w) => w.id === numericId);
+  return vr ? convertToWork(vr) : undefined;
+}
+
+/**
+ * 数値IDリストから作品を取得
+ */
+export async function getWorksByNumericIds(numericIds: number[]): Promise<Work[]> {
+  const rawWorks = await getRawWorks();
+  const idSet = new Set(numericIds);
+  return rawWorks
+    .filter((w) => idSet.has(w.id))
+    .map(convertToWork);
 }
