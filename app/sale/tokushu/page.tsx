@@ -375,8 +375,8 @@ export default async function SaleTokushuPage() {
   }
 
   // 作品データを取得
-  const mainWork = feature.featuredWorkId
-    ? await getWorkByNumericId(feature.featuredWorkId)
+  const mainWork = feature.mainWorkId
+    ? await getWorkByNumericId(feature.mainWorkId)
     : null;
   const sub1Work = feature.sub1WorkId
     ? await getWorkByNumericId(feature.sub1WorkId)
@@ -452,14 +452,8 @@ export default async function SaleTokushuPage() {
               </Button>
             </Link>
           </div>
-          <div className="mt-2 flex flex-wrap gap-2 text-xs text-muted-foreground">
-            <span className="text-red-500 font-medium">
-              最大{feature.maxDiscountRate}%OFF
-            </span>
-            <span>・</span>
-            <span>
-              平均{feature.avgDiscountRate}%OFF
-            </span>
+          <div className="mt-2 text-xs text-red-500 font-medium">
+            最大{feature.maxDiscountRate}%OFF
           </div>
         </div>
 

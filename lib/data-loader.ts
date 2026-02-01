@@ -643,20 +643,24 @@ export async function getWorksByIds(ids: string[]): Promise<Work[]> {
 export interface SaleFeature {
   id: number;
   target_date: string;
+  // メイン作品
+  main_work_id: number | null;
   main_headline: string | null;
-  main_description: string | null;
-  featured_work_id: number | null;
-  featured_thumbnail_url: string | null;
+  main_reason: string | null;
+  // サブ作品1
   sub1_work_id: number | null;
-  sub1_thumbnail_url: string | null;
+  sub1_one_liner: string | null;
+  // サブ作品2
   sub2_work_id: number | null;
-  sub2_thumbnail_url: string | null;
-  cheapest_work_ids: string | null;
-  high_discount_work_ids: string | null;
-  high_rating_work_ids: string | null;
+  sub2_one_liner: string | null;
+  // リスト
+  cheapest_work_ids: number[] | string | null;
+  high_discount_work_ids: number[] | string | null;
+  high_rating_work_ids: number[] | string | null;
+  // 統計
   total_sale_count: number;
   max_discount_rate: number;
-  avg_discount_rate: number | null;
+  ogp_image_url: string | null;
   created_at: string;
   updated_at: string;
 }
@@ -665,29 +669,36 @@ export interface SaleFeature {
 export interface SaleFeatureView {
   id: number;
   targetDate: string;
+  // メイン作品
+  mainWorkId: number | null;
   mainHeadline: string;
-  mainDescription: string;
-  featuredWorkId: number | null;
-  featuredThumbnailUrl: string | null;
+  mainReason: string;
+  // サブ作品1
   sub1WorkId: number | null;
-  sub1ThumbnailUrl: string | null;
+  sub1OneLiner: string | null;
+  // サブ作品2
   sub2WorkId: number | null;
-  sub2ThumbnailUrl: string | null;
+  sub2OneLiner: string | null;
+  // リスト
   cheapestWorkIds: number[];
   highDiscountWorkIds: number[];
   highRatingWorkIds: number[];
+  // 統計
   totalSaleCount: number;
   maxDiscountRate: number;
-  avgDiscountRate: number;
   updatedAt: string;
+  // 後方互換（バナー用）
+  featuredWorkId: number | null;
+  featuredThumbnailUrl: string | null;
 }
 
 /**
  * SaleFeatureをフロント用に変換
  */
 function convertToSaleFeatureView(feature: SaleFeature): SaleFeatureView {
-  const parseIds = (value: string | null): number[] => {
+  const parseIds = (value: number[] | string | null): number[] => {
     if (!value) return [];
+    if (Array.isArray(value)) return value;
     try {
       const parsed = JSON.parse(value);
       return Array.isArray(parsed) ? parsed : [];
@@ -699,21 +710,26 @@ function convertToSaleFeatureView(feature: SaleFeature): SaleFeatureView {
   return {
     id: feature.id,
     targetDate: feature.target_date,
+    // メイン作品
+    mainWorkId: feature.main_work_id,
     mainHeadline: feature.main_headline || "本日のセール特集",
-    mainDescription: feature.main_description || "お得なVR作品をお見逃しなく！",
-    featuredWorkId: feature.featured_work_id,
-    featuredThumbnailUrl: feature.featured_thumbnail_url,
+    mainReason: feature.main_reason || "お得なVR作品をお見逃しなく！",
+    // サブ作品
     sub1WorkId: feature.sub1_work_id,
-    sub1ThumbnailUrl: feature.sub1_thumbnail_url,
+    sub1OneLiner: feature.sub1_one_liner,
     sub2WorkId: feature.sub2_work_id,
-    sub2ThumbnailUrl: feature.sub2_thumbnail_url,
+    sub2OneLiner: feature.sub2_one_liner,
+    // リスト
     cheapestWorkIds: parseIds(feature.cheapest_work_ids),
     highDiscountWorkIds: parseIds(feature.high_discount_work_ids),
     highRatingWorkIds: parseIds(feature.high_rating_work_ids),
+    // 統計
     totalSaleCount: feature.total_sale_count,
     maxDiscountRate: feature.max_discount_rate,
-    avgDiscountRate: feature.avg_discount_rate || 0,
     updatedAt: feature.updated_at,
+    // 後方互換（バナー用）
+    featuredWorkId: feature.main_work_id,
+    featuredThumbnailUrl: null,
   };
 }
 

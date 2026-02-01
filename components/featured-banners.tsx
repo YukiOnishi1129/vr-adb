@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Flame, Trophy, ChevronRight } from "lucide-react";
+import { Sparkles, Trophy, ChevronRight } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { FeatureCarousel, FeatureGridCarousel } from "@/components/feature-carousel";
 import type { FeatureRecommendationView, ActressFeatureView, SaleFeatureView, DailyRecommendationView } from "@/lib/data-loader";
@@ -51,11 +51,11 @@ export function FeaturedBanners({
       <div className="grid grid-cols-2 gap-3 md:gap-4">
         {/* 今日のおすすめ（左） */}
         <Link href="/recommendations">
-          <Card className="overflow-hidden border border-amber-500/30 hover:border-amber-500/50 transition-all h-full bg-transparent p-0 gap-0">
+          <Card className="overflow-hidden border border-amber-500/30 hover:border-amber-500/50 transition-all h-full">
             {/* スマホ: 画像大きめ + オーバーレイテキスト */}
             <div className="relative md:hidden">
               {dailyRecommendation?.recommendedWorks[0]?.thumbnail_url ? (
-                <div className="relative aspect-3/2 overflow-hidden">
+                <div className="relative aspect-4/3 overflow-hidden">
                   <img
                     src={dailyRecommendation.recommendedWorks[0].thumbnail_url}
                     alt=""
@@ -68,12 +68,12 @@ export function FeaturedBanners({
                   <div className="absolute top-2 left-2 px-2.5 py-1 rounded-md text-sm font-bold text-white bg-amber-500" style={{ boxShadow: "0 4px 12px rgba(0,0,0,0.5)" }}>
                     🏆 今日のおすすめ
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-3">
-                    <div className="flex items-center gap-1.5 mb-0.5">
-                      <Trophy className="h-3.5 w-3.5 text-amber-400" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.8))" }} />
-                      <span className="text-xs font-bold text-white" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.9)" }}>今日の間違いないやつ</span>
+                  <div className="absolute bottom-0 left-0 right-0 p-2">
+                    <div className="flex items-center gap-1 mb-0.5">
+                      <Trophy className="h-3 w-3 shrink-0 text-amber-400" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.8))" }} />
+                      <span className="text-[10px] font-bold text-white whitespace-nowrap" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.9)" }}>今日の間違いないやつ</span>
                     </div>
-                    <p className="text-[10px] font-bold text-white/80" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.9)" }}>
+                    <p className="text-[9px] font-bold text-white/80 line-clamp-1" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.9)" }}>
                       {recommendationSubtext}
                     </p>
                   </div>
@@ -122,11 +122,11 @@ export function FeaturedBanners({
 
         {/* セール特集（右） */}
         <Link href="/sale/tokushu">
-          <Card className="overflow-hidden border border-red-500/30 hover:border-red-500/50 transition-all h-full bg-transparent p-0 gap-0">
+          <Card className="overflow-hidden border border-red-500/30 hover:border-red-500/50 transition-all h-full">
             {/* スマホ: 画像大きめ + オーバーレイテキスト */}
             <div className="relative md:hidden">
               {effectiveSaleThumbnail ? (
-                <div className="relative aspect-3/2 overflow-hidden">
+                <div className="relative aspect-4/3 overflow-hidden">
                   <img
                     src={effectiveSaleThumbnail}
                     alt=""
@@ -139,23 +139,23 @@ export function FeaturedBanners({
                   <div className="absolute top-2 left-2 px-2.5 py-1 rounded-md text-sm font-bold text-white bg-red-500" style={{ boxShadow: "0 4px 12px rgba(0,0,0,0.5)" }}>
                     🔥 セール特集
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-3">
-                    <div className="flex items-center gap-1.5 mb-0.5">
-                      <Flame className="h-3.5 w-3.5 text-red-400" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.8))" }} />
-                      <span className="text-xs font-bold text-white" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.9)" }}>{saleTitle}</span>
+                  <div className="absolute bottom-0 left-0 right-0 p-2">
+                    <div className="flex items-center gap-1 mb-0.5">
+                      <Sparkles className="h-3 w-3 shrink-0 text-red-400" style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.8))" }} />
+                      <span className="text-[10px] font-bold text-white whitespace-nowrap" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.9)" }}>{saleTitle}</span>
                     </div>
-                    <p className="text-[10px] font-bold text-white/80" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.9)" }}>
+                    <p className="text-[9px] font-bold text-white/80 line-clamp-1" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.9)" }}>
                       {saleSubtext}
                     </p>
                   </div>
                 </div>
               ) : (
-                <div className="p-3 flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-500/20 shrink-0">
-                    <Flame className="h-5 w-5 text-red-500" />
+                <div className="p-2 flex items-center gap-2">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-500/20 shrink-0">
+                    <Sparkles className="h-4 w-4 text-red-500" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <span className="text-xs font-bold text-red-500">{saleTitle}</span>
+                    <span className="text-[10px] font-bold text-red-500 whitespace-nowrap">{saleTitle}</span>
                   </div>
                 </div>
               )}
@@ -174,12 +174,12 @@ export function FeaturedBanners({
                 </div>
               ) : (
                 <div className="flex h-14 w-14 items-center justify-center rounded-full bg-red-500/20 shrink-0">
-                  <Flame className="h-6 w-6 text-red-500" />
+                  <Sparkles className="h-6 w-6 text-red-500" />
                 </div>
               )}
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1">
-                  <Flame className="h-5 w-5 text-red-500" />
+                  <Sparkles className="h-5 w-5 text-red-500" />
                   <span className="text-base font-bold text-red-500">{saleTitle}</span>
                 </div>
                 <p className="text-sm font-bold text-muted-foreground">

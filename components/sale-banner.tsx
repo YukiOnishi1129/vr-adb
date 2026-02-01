@@ -60,48 +60,50 @@ export function SaleBanner({ saleWorks }: SaleBannerProps) {
 
   return (
     <Link href="/sale">
-      <div className="relative mb-6 overflow-hidden rounded-xl bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 p-4 text-white shadow-lg transition-transform hover:scale-[1.01]">
+      <div className="relative mb-6 overflow-hidden rounded-xl bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 p-3 text-white shadow-lg transition-transform hover:scale-[1.01]">
         {/* 背景装飾 */}
         <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-white/10" />
         <div className="absolute -bottom-4 -left-4 h-24 w-24 rounded-full bg-white/10" />
 
-        <div className="relative flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20">
-              <Flame className="h-6 w-6" />
+        <div className="relative flex items-center gap-3">
+          {/* 左: アイコン + テキスト */}
+          <div className="flex items-center gap-2 min-w-0 flex-1">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/20">
+              <Flame className="h-5 w-5" />
             </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="text-lg font-bold">セール開催中</span>
+            <div className="min-w-0">
+              <div className="flex flex-wrap items-center gap-1.5">
+                <span className="text-base font-bold whitespace-nowrap">セール開催中</span>
                 {maxDiscount > 0 && (
-                  <span className="rounded bg-white/20 px-2 py-0.5 text-sm font-bold">
+                  <span className="rounded bg-white/20 px-1.5 py-0.5 text-xs font-bold whitespace-nowrap">
                     最大{maxDiscount}%OFF
                   </span>
                 )}
               </div>
-              <p className="text-sm text-white/80">
+              <p className="text-xs text-white/80 whitespace-nowrap">
                 {saleWorks.length}件のVR作品がお得に
               </p>
             </div>
           </div>
 
+          {/* 右: カウントダウン */}
           {countdown && (
-            <div className="flex items-center gap-2 rounded-lg bg-black/20 px-3 py-2">
-              <Clock className="h-4 w-4" />
+            <div className="flex shrink-0 items-center gap-1.5 rounded-lg bg-black/20 px-2 py-1.5">
+              <Clock className="h-3.5 w-3.5" />
               <div className="text-right">
-                <div className="text-xs text-white/70">終了まで</div>
-                <div className="font-bold">{countdown}</div>
+                <div className="text-[10px] text-white/70 whitespace-nowrap">終了まで</div>
+                <div className="text-sm font-bold whitespace-nowrap">{countdown}</div>
               </div>
             </div>
           )}
         </div>
 
         {/* サムネイルプレビュー */}
-        <div className="mt-3 flex -space-x-2">
+        <div className="mt-2 flex -space-x-2">
           {saleWorks.slice(0, 5).map((work) => (
             <div
               key={work.id}
-              className="h-10 w-16 overflow-hidden rounded border-2 border-white/30 bg-black"
+              className="h-9 w-14 overflow-hidden rounded border-2 border-white/30 bg-black"
             >
               <img
                 src={work.thumbnailUrl}
@@ -111,7 +113,7 @@ export function SaleBanner({ saleWorks }: SaleBannerProps) {
             </div>
           ))}
           {saleWorks.length > 5 && (
-            <div className="flex h-10 w-16 items-center justify-center rounded border-2 border-white/30 bg-black/50 text-sm font-bold">
+            <div className="flex h-9 w-14 items-center justify-center rounded border-2 border-white/30 bg-black/50 text-xs font-bold">
               +{saleWorks.length - 5}
             </div>
           )}

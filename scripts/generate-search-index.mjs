@@ -117,12 +117,26 @@ function convertToSearchItem(work) {
     }
   }
 
+  // セール中かどうか
+  const isOnSale = discountRate !== null && discountRate > 0;
+
+  // 女優数（単体/共演判定用）
+  const actressCount = work.actress_count || actresses.length || 1;
+
+  // VRタイプ判定（genresから抽出）
+  const vrTypes = [];
+  for (const genre of genres) {
+    if (genre.includes("8K")) vrTypes.push("8K");
+    if (genre.includes("ハイクオリティ")) vrTypes.push("HQ");
+    if (genre.includes("単体作品")) vrTypes.push("単体");
+  }
+
   return {
     id: work.fanza_product_id,
     t: work.title, // タイトル
     ac: actresses, // 女優リスト
     g: genres, // ジャンルリスト
-    mk: "", // メーカー（TODO: makers.jsonから取得）
+    mk: work.maker_name || "", // メーカー名
     p: price, // 現在価格
     lp: listPrice, // 定価
     dr: discountRate, // 割引率
@@ -132,6 +146,10 @@ function convertToSearchItem(work) {
     rel: work.release_date || "", // 配信日
     dur: work.duration_minutes || null, // 再生時間
     rk: work.ranking_position || null, // ランキング順位
+    // 追加フィールド
+    sale: isOnSale, // セール中
+    acnt: actressCount, // 女優数
+    vt: vrTypes, // VRタイプ（8K, HQ, 単体など）
   };
 }
 
