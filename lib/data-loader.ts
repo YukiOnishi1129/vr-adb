@@ -861,6 +861,8 @@ export interface FeatureRecommendation {
   headline: string | null;
   description: string | null;
   recommended_works: FeatureRecommendedWork[] | string | null;
+  solo_recommended_works: FeatureRecommendedWork[] | string | null;
+  multi_recommended_works: FeatureRecommendedWork[] | string | null;
   thumbnail_url: string | null;
   work_count: number;
   created_at: string;
@@ -882,27 +884,38 @@ export interface FeatureRecommendationView {
   headline: string;
   description: string;
   recommendedWorks: FeatureRecommendedWork[];
+  soloRecommendedWorks: FeatureRecommendedWork[];
+  multiRecommendedWorks: FeatureRecommendedWork[];
   thumbnailUrl: string | null;
   workCount: number;
   updatedAt: string;
 }
 
 /**
+ * JSONフィールドをパースするヘルパー
+ */
+function parseFeatureRecommendedWorks(field: FeatureRecommendedWork[] | string | null): FeatureRecommendedWork[] {
+  if (!field) return [];
+  if (typeof field === "string") {
+    try {
+      return JSON.parse(field);
+    } catch {
+      return [];
+    }
+  }
+  if (Array.isArray(field)) {
+    return field;
+  }
+  return [];
+}
+
+/**
  * FeatureRecommendationをフロント用に変換
  */
 function convertToFeatureRecommendationView(feature: FeatureRecommendation): FeatureRecommendationView {
-  let recommendedWorks: FeatureRecommendedWork[] = [];
-  if (feature.recommended_works) {
-    if (typeof feature.recommended_works === "string") {
-      try {
-        recommendedWorks = JSON.parse(feature.recommended_works);
-      } catch {
-        recommendedWorks = [];
-      }
-    } else if (Array.isArray(feature.recommended_works)) {
-      recommendedWorks = feature.recommended_works;
-    }
-  }
+  const recommendedWorks = parseFeatureRecommendedWorks(feature.recommended_works);
+  const soloRecommendedWorks = parseFeatureRecommendedWorks(feature.solo_recommended_works);
+  const multiRecommendedWorks = parseFeatureRecommendedWorks(feature.multi_recommended_works);
 
   return {
     id: feature.id,
@@ -911,6 +924,8 @@ function convertToFeatureRecommendationView(feature: FeatureRecommendation): Fea
     headline: feature.headline || `${feature.name}のVR特集`,
     description: feature.description || `${feature.name}好きに贈るVR作品特集`,
     recommendedWorks,
+    soloRecommendedWorks,
+    multiRecommendedWorks,
     thumbnailUrl: feature.thumbnail_url,
     workCount: feature.work_count,
     updatedAt: feature.updated_at,

@@ -234,12 +234,21 @@ export default async function FeatureSlugPage({
     notFound();
   }
 
-  // 作品データを取得
-  const recommendedWorks: { work: Work; rec: FeatureRecommendedWork }[] = [];
-  for (const rec of feature.recommendedWorks) {
+  // 単体作品データを取得
+  const soloWorks: { work: Work; rec: FeatureRecommendedWork }[] = [];
+  for (const rec of feature.soloRecommendedWorks) {
     const work = await getWorkByNumericId(rec.work_id);
     if (work) {
-      recommendedWorks.push({ work, rec });
+      soloWorks.push({ work, rec });
+    }
+  }
+
+  // 共演作品データを取得
+  const multiWorks: { work: Work; rec: FeatureRecommendedWork }[] = [];
+  for (const rec of feature.multiRecommendedWorks) {
+    const work = await getWorkByNumericId(rec.work_id);
+    if (work) {
+      multiWorks.push({ work, rec });
     }
   }
 
@@ -309,27 +318,53 @@ export default async function FeatureSlugPage({
           </div>
         </section>
 
-        {/* おすすめ作品一覧 */}
-        <section className="mb-8">
-          <div className="flex items-center gap-2 mb-4">
-            <Star className="h-5 w-5 text-amber-500" />
-            <h2 className="text-lg font-bold text-foreground">{feature.name}おすすめVR</h2>
-            <Badge variant="secondary" className="text-xs">
-              TOP {recommendedWorks.length}
-            </Badge>
-          </div>
-          <div className="grid gap-4">
-            {recommendedWorks.map(({ work, rec }, index) => (
-              <RecommendationCard
-                key={work.id}
-                work={work}
-                reason={rec.reason || work.aiRecommendReason || "人気のVR作品です"}
-                targetAudience={rec.target_audience || work.aiTargetAudience || "VRを楽しみたい方"}
-                rank={index + 1}
-              />
-            ))}
-          </div>
-        </section>
+        {/* 単体作品おすすめ */}
+        {soloWorks.length > 0 && (
+          <section className="mb-8">
+            <div className="flex items-center gap-2 mb-4">
+              <Star className="h-5 w-5 text-amber-500" />
+              <h2 className="text-lg font-bold text-foreground">{feature.name}単体作品BEST</h2>
+              <Badge variant="secondary" className="text-xs">
+                TOP {soloWorks.length}
+              </Badge>
+            </div>
+            <div className="grid gap-4">
+              {soloWorks.map(({ work, rec }, index) => (
+                <RecommendationCard
+                  key={work.id}
+                  work={work}
+                  reason={rec.reason || work.aiRecommendReason || "人気のVR作品です"}
+                  targetAudience={rec.target_audience || work.aiTargetAudience || "VRを楽しみたい方"}
+                  rank={index + 1}
+                />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* 共演作品おすすめ */}
+        {multiWorks.length > 0 && (
+          <section className="mb-8">
+            <div className="flex items-center gap-2 mb-4">
+              <Users className="h-5 w-5 text-purple-500" />
+              <h2 className="text-lg font-bold text-foreground">{feature.name}共演作品BEST</h2>
+              <Badge variant="secondary" className="text-xs">
+                TOP {multiWorks.length}
+              </Badge>
+            </div>
+            <div className="grid gap-4">
+              {multiWorks.map(({ work, rec }, index) => (
+                <RecommendationCard
+                  key={work.id}
+                  work={work}
+                  reason={rec.reason || work.aiRecommendReason || "人気のVR作品です"}
+                  targetAudience={rec.target_audience || work.aiTargetAudience || "VRを楽しみたい方"}
+                  rank={index + 1}
+                />
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* このジャンルの作品をもっと見る */}
         <div className="mt-8 mb-10">
