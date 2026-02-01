@@ -479,6 +479,8 @@ export interface ActressFeature {
   representative_work_id: number | null;
   representative_thumbnail_url: string | null;
   recommended_works: RecommendedWork[] | string | null;
+  solo_recommended_works: RecommendedWork[] | string | null;
+  multi_recommended_works: RecommendedWork[] | string | null;
   sale_works: SaleWork[] | string | null;
   total_work_count: number;
   solo_work_count: number;
@@ -515,6 +517,8 @@ export interface ActressFeatureView {
   description: string;
   representativeThumbnailUrl: string | null;
   recommendedWorks: RecommendedWork[];
+  soloRecommendedWorks: RecommendedWork[];
+  multiRecommendedWorks: RecommendedWork[];
   saleWorks: SaleWork[];
   totalWorkCount: number;
   soloWorkCount: number;
@@ -525,36 +529,41 @@ export interface ActressFeatureView {
 }
 
 /**
+ * JSON配列フィールドをパースするヘルパー
+ */
+function parseRecommendedWorks(data: RecommendedWork[] | string | null): RecommendedWork[] {
+  if (!data) return [];
+  if (typeof data === "string") {
+    try {
+      return JSON.parse(data);
+    } catch {
+      return [];
+    }
+  }
+  return data;
+}
+
+function parseSaleWorks(data: SaleWork[] | string | null): SaleWork[] {
+  if (!data) return [];
+  if (typeof data === "string") {
+    try {
+      return JSON.parse(data);
+    } catch {
+      return [];
+    }
+  }
+  return data;
+}
+
+/**
  * ActressFeatureをフロント用に変換
  */
 function convertToActressFeatureView(feature: ActressFeature): ActressFeatureView {
-  // recommended_worksをパース
-  let recommendedWorks: RecommendedWork[] = [];
-  if (feature.recommended_works) {
-    if (typeof feature.recommended_works === "string") {
-      try {
-        recommendedWorks = JSON.parse(feature.recommended_works);
-      } catch {
-        recommendedWorks = [];
-      }
-    } else {
-      recommendedWorks = feature.recommended_works;
-    }
-  }
-
-  // sale_worksをパース
-  let saleWorks: SaleWork[] = [];
-  if (feature.sale_works) {
-    if (typeof feature.sale_works === "string") {
-      try {
-        saleWorks = JSON.parse(feature.sale_works);
-      } catch {
-        saleWorks = [];
-      }
-    } else {
-      saleWorks = feature.sale_works;
-    }
-  }
+  // 各フィールドをパース
+  const recommendedWorks = parseRecommendedWorks(feature.recommended_works);
+  const soloRecommendedWorks = parseRecommendedWorks(feature.solo_recommended_works);
+  const multiRecommendedWorks = parseRecommendedWorks(feature.multi_recommended_works);
+  const saleWorks = parseSaleWorks(feature.sale_works);
 
   return {
     id: feature.id,
@@ -565,6 +574,8 @@ function convertToActressFeatureView(feature: ActressFeature): ActressFeatureVie
     description: feature.description || `${feature.name}のVR作品を厳選してお届け。`,
     representativeThumbnailUrl: feature.representative_thumbnail_url,
     recommendedWorks,
+    soloRecommendedWorks,
+    multiRecommendedWorks,
     saleWorks,
     totalWorkCount: feature.total_work_count,
     soloWorkCount: feature.solo_work_count,
