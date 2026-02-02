@@ -95,9 +95,14 @@ async function main() {
   mkdirSync(CACHE_DIR, { recursive: true });
 
   // VR-ADB用Parquetファイル
-  // 現在はworks_test.parquetのみ（本番ではworks.parquetに変更）
   const files = [
-    { parquet: "works_test.parquet", json: "works.json" },
+    { parquet: "works.parquet", json: "works.json" },
+    { parquet: "actresses.parquet", json: "actresses.json" },
+    { parquet: "makers.parquet", json: "makers.json" },
+    { parquet: "actress_features.parquet", json: "actress_features.json" },
+    { parquet: "sale_features.parquet", json: "sale_features.json" },
+    { parquet: "daily_recommendations.parquet", json: "daily_recommendations.json" },
+    { parquet: "feature_recommendations.parquet", json: "feature_recommendations.json" },
   ];
 
   // BigIntをNumberに変換するreplacer

@@ -11,7 +11,14 @@ import { notFound } from "next/navigation";
 import { FanzaLink } from "@/components/fanza-link";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import { getWorks, getWorkById } from "@/lib/data-loader";
+import { WorkCard } from "@/components/work-card";
+import {
+  getWorks,
+  getWorkById,
+  getWorksByActressExcluding,
+  getSimilarWorks,
+  getPopularWorks,
+} from "@/lib/data-loader";
 
 export async function generateStaticParams() {
   const works = await getWorks();
@@ -28,11 +35,19 @@ export default async function WorkDetailPage({
   const { id } = await params;
   const work = await getWorkById(id);
 
+  // 関連作品を取得
+  const mainActress = work?.actresses?.[0];
+  const [actressWorks, similarWorks, popularWorks] = await Promise.all([
+    mainActress && work ? getWorksByActressExcluding(mainActress, work.id, 4) : Promise.resolve([]),
+    work ? getSimilarWorks(work, 4) : Promise.resolve([]),
+    work ? getPopularWorks(work.id, 4) : Promise.resolve([]),
+  ]);
+
   if (!work) {
     notFound();
   }
 
-  // セール中かどうか（price < listPrice）
+  // セール中かどうか
   const isOnSale = work.listPrice > 0 && work.price < work.listPrice;
 
   // 星評価を生成するヘルパー関数
@@ -108,6 +123,13 @@ export default async function WorkDetailPage({
               <div className="absolute bottom-3 right-3 rounded bg-black/70 px-3 py-1 text-sm text-white">
                 {work.vrType}
               </div>
+              {/* 高評価バッジ */}
+              {work.rating >= 4.5 && (
+                <div className="absolute bottom-3 left-3 flex items-center gap-1 rounded bg-amber-500/90 px-2 py-1 text-xs font-bold text-white">
+                  <Star className="h-3 w-3 fill-white" />
+                  高評価
+                </div>
+              )}
             </div>
 
             {/* タイトル */}
@@ -116,14 +138,14 @@ export default async function WorkDetailPage({
             </h1>
 
             {/* ファーストビューCTA */}
-            <div className="mt-4 rounded-lg border border-border bg-card p-4">
+            <div className={`mt-4 rounded-lg border p-4 ${isOnSale ? "border-orange-500/50 bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-950/30 dark:to-red-950/30" : "border-border bg-card"}`}>
               {/* セール情報バナー */}
               {isOnSale && work.discountPercent > 0 && (
-                <div className="mb-3 flex items-center justify-center gap-2 rounded bg-red-600/10 py-2">
+                <div className="mb-3 flex items-center justify-center gap-2">
                   <span className="rounded bg-red-600 px-2 py-0.5 text-xs font-bold text-white">
                     {work.discountPercent}%OFF
                   </span>
-                  <span className="text-sm font-medium text-red-600">
+                  <span className="text-sm font-bold text-orange-600 dark:text-orange-400">
                     今だけの特別価格！
                   </span>
                 </div>
@@ -133,8 +155,8 @@ export default async function WorkDetailPage({
               {work.rating > 0 && (
                 <div className="flex items-center justify-center gap-2">
                   {renderStars(work.rating)}
-                  <span className="text-lg font-bold">{work.rating.toFixed(1)}</span>
-                  <span className="text-sm text-muted-foreground">
+                  <span className="text-xl font-bold text-red-500">{work.rating.toFixed(1)}</span>
+                  <span className="text-sm text-gray-700 dark:text-gray-300">
                     ({work.reviewCount}件のレビュー)
                   </span>
                 </div>
@@ -170,11 +192,15 @@ export default async function WorkDetailPage({
                 url={work.fanzaUrl}
                 contentId={work.id}
                 source="firstview_cta"
-                className="mt-4 flex w-full items-center justify-center gap-2 rounded-lg bg-primary py-3 font-bold text-primary-foreground transition-colors hover:bg-primary/90"
+                className={`mt-4 flex w-full items-center justify-center gap-2 rounded-lg py-3 font-bold text-white transition-colors ${isOnSale ? "bg-orange-500 hover:bg-orange-600" : "bg-primary hover:bg-primary/90"}`}
               >
-                FANZAで購入
+                FANZAで詳細を見る
                 <ExternalLink className="h-4 w-4" />
               </FanzaLink>
+
+              <p className="mt-2 text-center text-xs text-muted-foreground">
+                無料のサンプル動画で確認できます
+              </p>
             </div>
 
             {/* 再生時間・配信日 */}
@@ -219,9 +245,155 @@ export default async function WorkDetailPage({
               )}
             </div>
 
+            {/* AIタグ（2d-adb風） */}
+            {work.aiTags.length > 0 && (
+              <div className="mt-4 flex flex-wrap gap-2">
+                {work.aiTags.map((tag) => (
+                  <Link
+                    key={tag}
+                    href={`/genres/${encodeURIComponent(tag)}`}
+                    className="rounded-full bg-blue-100 px-3 py-1 text-sm text-blue-700 hover:bg-blue-200 dark:bg-blue-900/50 dark:text-blue-300 dark:hover:bg-blue-800/50"
+                  >
+                    {tag}
+                  </Link>
+                ))}
+              </div>
+            )}
+
+            {/* シチュエーション・フェチタグ */}
+            {(work.situations.length > 0 || work.fetishTags.length > 0) && (
+              <div className="mt-3 flex flex-wrap gap-2">
+                {work.situations.map((s) => (
+                  <span
+                    key={s}
+                    className="rounded-full bg-pink-100 px-3 py-1 text-sm text-pink-700 dark:bg-pink-900/50 dark:text-pink-300"
+                  >
+                    {s}
+                  </span>
+                ))}
+                {work.fetishTags.map((t) => (
+                  <span
+                    key={t}
+                    className="rounded-full bg-purple-100 px-3 py-1 text-sm text-purple-700 dark:bg-purple-900/50 dark:text-purple-300"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            {/* サンプル画像（おすすめの理由の前に配置） */}
+            {work.sampleImages.length > 0 && (
+              <div className="mt-6 space-y-3">
+                {work.sampleImages.map((url) => (
+                  <div
+                    key={url}
+                    className="overflow-hidden rounded-lg bg-muted"
+                  >
+                    <img
+                      src={url}
+                      alt="サンプル画像"
+                      className="w-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* おすすめの理由（2d-adb風） */}
+            {work.aiRecommendReason && (
+              <section className="mt-6 rounded-lg bg-secondary/50 p-4">
+                <h2 className="text-sm font-medium text-muted-foreground">おすすめの理由</h2>
+                <p className="mt-2 text-foreground">{work.aiRecommendReason}</p>
+              </section>
+            )}
+
+            {/* 要約（2d-adb風） */}
+            {work.aiSummary && (
+              <section className="mt-4 rounded-lg bg-secondary/50 p-4">
+                <h2 className="text-sm font-medium text-muted-foreground">要約</h2>
+                <p className="mt-2 text-foreground">{work.aiSummary}</p>
+              </section>
+            )}
+
+            {/* こんな人におすすめ（2d-adb風） */}
+            {work.aiTargetAudience && (
+              <section className="mt-4 rounded-lg border border-emerald-200 bg-emerald-50 p-4 dark:border-emerald-800 dark:bg-emerald-950">
+                <h2 className="text-sm font-bold text-gray-900 dark:text-gray-100">
+                  🎯 こんな人におすすめ
+                </h2>
+                <p className="mt-2 text-gray-800 dark:text-gray-200">
+                  {work.aiTargetAudience}
+                </p>
+              </section>
+            )}
+
+            {/* 刺さりポイント（2d-adb風） */}
+            {work.aiAppealPoints && (
+              <section className="mt-4 rounded-lg border border-amber-200 bg-amber-50 p-4 dark:border-amber-800 dark:bg-amber-950">
+                <h2 className="text-sm font-bold text-gray-900 dark:text-gray-100">
+                  これが刺さる！
+                </h2>
+                <p className="mt-2 text-gray-800 dark:text-gray-200">
+                  {work.aiAppealPoints}
+                </p>
+              </section>
+            )}
+
+            {/* 注意点（2d-adb風） */}
+            {work.aiWarnings && (
+              <section className="mt-4 rounded-lg border border-rose-200 bg-rose-50 p-4 dark:border-rose-800 dark:bg-rose-950">
+                <h2 className="text-sm font-bold text-gray-900 dark:text-gray-100">
+                  ⚠️ 注意点
+                </h2>
+                <p className="mt-2 text-gray-800 dark:text-gray-200">
+                  {work.aiWarnings}
+                </p>
+              </section>
+            )}
+
+            {/* vr-adb編集部レビュー（体験レポを置き換え） */}
+            {work.aiReview && (
+              <section className="mt-6 rounded-lg border border-purple-200 bg-gradient-to-br from-purple-50 to-indigo-50 p-4 dark:border-purple-800 dark:from-purple-950 dark:to-indigo-950">
+                <h2 className="text-sm font-bold text-gray-900 dark:text-gray-100">
+                  📝 vr-adb編集部レビュー
+                </h2>
+                <p className="mt-2 leading-relaxed text-gray-800 dark:text-gray-200">
+                  {work.aiReview}
+                </p>
+              </section>
+            )}
+
+            {/* CTA */}
+            <div className={`mt-6 rounded-lg border p-4 ${isOnSale ? "border-orange-500/50 bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-950/30 dark:to-red-950/30" : "border-primary/30 bg-primary/5"}`}>
+              {isOnSale && work.discountPercent > 0 && (
+                <div className="mb-3 flex items-center justify-center gap-2">
+                  <span className="rounded bg-red-600 px-2 py-0.5 text-xs font-bold text-white">
+                    {work.discountPercent}%OFF
+                  </span>
+                  <span className="text-sm font-bold text-orange-600 dark:text-orange-400">
+                    今だけの特別価格！
+                  </span>
+                </div>
+              )}
+              <p className="mb-3 text-center text-sm font-medium text-gray-800 dark:text-gray-200">
+                この作品をVRで体験してみませんか？
+              </p>
+              <FanzaLink
+                url={work.fanzaUrl}
+                contentId={work.id}
+                source="mid_cta"
+                className={`flex w-full items-center justify-center gap-2 rounded-lg py-3 font-bold text-white transition-colors ${isOnSale ? "bg-orange-500 hover:bg-orange-600" : "bg-primary hover:bg-primary/90"}`}
+              >
+                FANZAで詳細を見る
+                <ExternalLink className="h-4 w-4" />
+              </FanzaLink>
+            </div>
+
             {/* ジャンル */}
             {work.genres.length > 0 && (
-              <div className="mt-4 flex flex-wrap gap-2">
+              <div className="mt-6 flex flex-wrap gap-2">
                 {work.genres.map((genre) => (
                   <Link
                     key={genre}
@@ -234,102 +406,20 @@ export default async function WorkDetailPage({
                 ))}
               </div>
             )}
-
-            {/* AI体験レポ（画像を合間に挿入） */}
-            {work.aiReview && (
-              <section className="mt-6">
-                <h2 className="text-lg font-bold">体験レポ</h2>
-                <div className="mt-2 space-y-4">
-                  {(() => {
-                    // 段落に分割（空行で区切る）
-                    const paragraphs = work.aiReview
-                      .split(/\n\n+/)
-                      .filter((p) => p.trim());
-                    // 画像を挿入する間隔（3段落ごと）
-                    const imageInterval = 3;
-                    // 後半のエロいシーンを使う（最後から2〜4番目）
-                    const totalImages = work.sampleImages.length;
-                    const availableImages =
-                      totalImages >= 4
-                        ? work.sampleImages.slice(-4, -1) // 最後から4〜2番目
-                        : work.sampleImages.slice(0, 3);
-                    let imageIndex = 0;
-
-                    return paragraphs.map((paragraph, i) => (
-                      <div key={`p-${paragraph.slice(0, 20)}-${i}`}>
-                        <p className="whitespace-pre-wrap leading-relaxed text-muted-foreground">
-                          {paragraph}
-                        </p>
-                        {/* 画像挿入: 3段落ごと、かつ画像がまだある場合 */}
-                        {(i + 1) % imageInterval === 0 &&
-                          imageIndex < availableImages.length && (
-                            <div className="my-4 overflow-hidden rounded-lg">
-                              <img
-                                src={availableImages[imageIndex++]}
-                                alt="サンプル"
-                                className="w-full object-cover"
-                                loading="lazy"
-                              />
-                            </div>
-                          )}
-                      </div>
-                    ));
-                  })()}
-                </div>
-              </section>
-            )}
-
-            {/* CTA */}
-            <div className="mt-6 rounded-lg border border-primary/30 bg-primary/5 p-4">
-              <p className="mb-3 text-center text-sm font-medium">
-                この作品をVRで体験してみませんか？
-              </p>
-              <FanzaLink
-                url={work.fanzaUrl}
-                contentId={work.id}
-                source="mid_cta"
-                className="flex w-full items-center justify-center gap-2 rounded-lg bg-primary py-3 font-bold text-primary-foreground transition-colors hover:bg-primary/90"
-              >
-                FANZAで詳細を見る
-                <ExternalLink className="h-4 w-4" />
-              </FanzaLink>
-            </div>
-
-            {/* 全サンプル画像（1カラム縦並び） */}
-            {work.sampleImages.length > 0 && (
-              <section className="mt-8">
-                <h2 className="text-lg font-bold">サンプルギャラリー</h2>
-                <div className="mt-3 space-y-3">
-                  {work.sampleImages.map((url) => (
-                    <div
-                      key={url}
-                      className="overflow-hidden rounded-lg bg-muted"
-                    >
-                      <img
-                        src={url}
-                        alt="サンプル画像"
-                        className="w-full object-cover"
-                        loading="lazy"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </section>
-            )}
           </div>
 
           {/* サイドバー */}
           <div className="lg:col-span-1">
             <div className="sticky top-20 space-y-4">
               {/* 価格・購入 */}
-              <div className="rounded-lg border border-border bg-card p-4">
+              <div className={`rounded-lg border p-4 ${isOnSale ? "border-orange-500/50 bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-950/30 dark:to-red-950/30" : "border-border bg-card"}`}>
                 {/* セール情報バナー */}
                 {isOnSale && work.discountPercent > 0 && (
-                  <div className="mb-3 flex items-center justify-center gap-2 rounded bg-red-600/10 py-2">
+                  <div className="mb-3 flex items-center justify-center gap-2">
                     <span className="rounded bg-red-600 px-2 py-0.5 text-xs font-bold text-white">
                       {work.discountPercent}%OFF
                     </span>
-                    <span className="text-sm font-medium text-red-600">
+                    <span className="text-sm font-bold text-orange-600 dark:text-orange-400">
                       今だけの特別価格！
                     </span>
                   </div>
@@ -341,9 +431,6 @@ export default async function WorkDetailPage({
                       <div className="flex items-center justify-center gap-2">
                         <span className="text-lg text-muted-foreground line-through">
                           ¥{work.listPrice.toLocaleString()}
-                        </span>
-                        <span className="rounded bg-red-600 px-1.5 py-0.5 text-xs font-bold text-white">
-                          {work.discountPercent}%OFF
                         </span>
                       </div>
                       <div className="text-3xl font-bold text-red-500">
@@ -366,7 +453,7 @@ export default async function WorkDetailPage({
                   url={work.fanzaUrl}
                   contentId={work.id}
                   source="sidebar_cta"
-                  className="mt-4 flex w-full items-center justify-center gap-2 rounded-lg bg-primary py-3 font-bold text-primary-foreground transition-colors hover:bg-primary/90"
+                  className={`mt-4 flex w-full items-center justify-center gap-2 rounded-lg py-3 font-bold text-white transition-colors ${isOnSale ? "bg-orange-500 hover:bg-orange-600" : "bg-primary hover:bg-primary/90"}`}
                 >
                   FANZAで購入
                   <ExternalLink className="h-4 w-4" />
@@ -406,6 +493,51 @@ export default async function WorkDetailPage({
             </div>
           </div>
         </div>
+
+        {/* 関連作品セクション */}
+        <div className="mt-12 space-y-10">
+          {/* 同じ女優の作品 */}
+          {actressWorks.length > 0 && mainActress && (
+            <section>
+              <h2 className="mb-4 text-lg font-bold">
+                🎬 {mainActress}の他の作品
+              </h2>
+              <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+                {actressWorks.map((w) => (
+                  <WorkCard key={w.id} work={w} />
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* 似た作品 */}
+          {similarWorks.length > 0 && (
+            <section>
+              <h2 className="mb-4 text-lg font-bold">
+                🔥 この作品が好きな人はこれも
+              </h2>
+              <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+                {similarWorks.map((w) => (
+                  <WorkCard key={w.id} work={w} />
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* 人気作品 */}
+          {popularWorks.length > 0 && (
+            <section>
+              <h2 className="mb-4 text-lg font-bold">
+                👑 今人気の作品
+              </h2>
+              <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+                {popularWorks.map((w) => (
+                  <WorkCard key={w.id} work={w} />
+                ))}
+              </div>
+            </section>
+          )}
+        </div>
       </main>
 
       <Footer />
@@ -443,10 +575,10 @@ export default async function WorkDetailPage({
             url={work.fanzaUrl}
             contentId={work.id}
             source="fixed_cta"
-            className="flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-bold text-primary-foreground"
+            className={`flex items-center gap-2 rounded-lg px-4 py-3 font-bold text-white whitespace-nowrap ${isOnSale ? "bg-orange-500" : "bg-primary"}`}
           >
             FANZAで見る
-            <ExternalLink className="h-4 w-4" />
+            <ExternalLink className="h-4 w-4 shrink-0" />
           </FanzaLink>
         </div>
       </div>
