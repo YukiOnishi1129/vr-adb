@@ -7,6 +7,9 @@ on:
     paths-ignore:
       - 'docs/**'
       - '**/*.md'
+  schedule:
+    # 毎日14:00 JST (05:00 UTC) - dailyバッチ完了後
+    - cron: '0 5 * * *'
   workflow_dispatch:
 
 jobs:
