@@ -5,8 +5,9 @@
   "scripts": {
     "prebuild": "node scripts/prebuild-data.mjs",
     "generate-search": "node scripts/generate-search-index.mjs",
+    "generate-sitemap": "node scripts/generate-sitemap.mjs",
     "dev": "next dev",
-    "build": "pnpm prebuild && pnpm generate-search && next build",
+    "build": "pnpm prebuild && pnpm generate-search && pnpm generate-sitemap && next build",
     "serve": "npx serve@latest out -p 3000",
     "lint": "biome lint .",
     "format": "biome format --write .",

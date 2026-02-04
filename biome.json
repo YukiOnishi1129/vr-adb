@@ -31,6 +31,9 @@
       "performance": {
         "noImgElement": "off"
       },
+      "security": {
+        "noDangerouslySetInnerHtml": "off"
+      },
       "style": {
         "useImportType": "off"
       }

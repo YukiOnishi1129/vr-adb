@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   Calendar,
   ChevronRight,
@@ -11,6 +12,7 @@ import { notFound } from "next/navigation";
 import { FanzaLink } from "@/components/fanza-link";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { BreadcrumbJsonLd, ProductJsonLd } from "@/components/json-ld";
 import { WorkCard } from "@/components/work-card";
 import {
   getWorks,
@@ -19,6 +21,44 @@ import {
   getSimilarWorks,
   getPopularWorks,
 } from "@/lib/data-loader";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const work = await getWorkById(id);
+
+  if (!work) {
+    return {
+      title: "作品が見つかりません | VR-ADB",
+    };
+  }
+
+  const description =
+    work.aiSummary ||
+    work.aiRecommendReason ||
+    `${work.title}のレビュー・詳細情報。${work.actresses.join("、")}出演。`;
+
+  return {
+    title: `${work.title} | VR-ADB`,
+    description,
+    openGraph: {
+      title: work.title,
+      description,
+      type: "website",
+      images: [work.thumbnailUrl],
+      url: `https://vr-adb.com/works/${work.id}/`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: work.title,
+      description,
+      images: [work.thumbnailUrl],
+    },
+  };
+}
 
 export async function generateStaticParams() {
   const works = await getWorks();
@@ -78,6 +118,13 @@ export default async function WorkDetailPage({
 
   return (
     <div className="min-h-screen bg-background">
+      <ProductJsonLd work={work} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "トップ", url: "https://vr-adb.com/" },
+          { name: work.title, url: `https://vr-adb.com/works/${work.id}/` },
+        ]}
+      />
       <Header />
 
       {/* セールヘッダーバナー（ヘッダーの下に固定） */}

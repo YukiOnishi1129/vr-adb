@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Geist } from "next/font/google";
 import { MobileNav } from "@/components/mobile-nav";
+import { WebsiteJsonLd } from "@/components/json-ld";
 import "./globals.css";
 
 const GA_MEASUREMENT_ID = "G-9CRFFSVGZ7";
@@ -53,6 +54,11 @@ export default function RootLayout({
         </Script>
       </head>
       <body className={`${geistSans.variable} antialiased`}>
+        <WebsiteJsonLd
+          url="https://vr-adb.com"
+          name="VR-ADB"
+          description="FANZA VRの人気作品をレビュー。VR AV おすすめランキング、セール情報、女優別作品まとめ。"
+        />
         {children}
         <MobileNav />
       </body>
