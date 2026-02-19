@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { ChevronRight, Tag } from "lucide-react";
 import Link from "next/link";
 import { Footer } from "@/components/footer";
@@ -7,6 +8,36 @@ import { getGenres, getWorksByGenre } from "@/lib/data-loader";
 
 interface Props {
   params: Promise<{ name: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { name: rawName } = await params;
+  const name = decodeURIComponent(rawName);
+  const works = await getWorksByGenre(name);
+
+  if (works.length === 0) {
+    return {
+      title: "ジャンルが見つかりません | VR-ADB",
+    };
+  }
+
+  const title = `「${name}」ジャンルのVR作品一覧（${works.length}作品） | VR-ADB`;
+  const description = `「${name}」ジャンルのアダルトVR動画${works.length}作品を掲載。人気作品やセール情報もチェック！`;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "website",
+    },
+    twitter: {
+      card: "summary",
+      title,
+      description,
+    },
+  };
 }
 
 export async function generateStaticParams() {
