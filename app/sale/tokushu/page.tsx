@@ -217,7 +217,7 @@ function MainFocusCard({
           {work.fanzaUrl && (
             <a href={work.fanzaUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
               <Button variant="outline" className="w-full py-6 whitespace-nowrap">
-                FANZAで見る
+                サンプルを見る
                 <ExternalLink className="h-4 w-4 ml-2 shrink-0" />
               </Button>
             </a>

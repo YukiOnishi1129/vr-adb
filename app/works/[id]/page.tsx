@@ -241,12 +241,12 @@ export default async function WorkDetailPage({
                 source="firstview_cta"
                 className={`mt-4 flex w-full items-center justify-center gap-2 rounded-lg py-3 font-bold text-white transition-colors ${isOnSale ? "bg-orange-500 hover:bg-orange-600" : "bg-primary hover:bg-primary/90"}`}
               >
-                FANZAで詳細を見る
+                無料サンプルを見る
                 <ExternalLink className="h-4 w-4" />
               </FanzaLink>
 
               <p className="mt-2 text-center text-xs text-muted-foreground">
-                無料のサンプル動画で確認できます
+                FANZAの商品ページへ移動します
               </p>
             </div>
 
@@ -433,7 +433,7 @@ export default async function WorkDetailPage({
                 source="mid_cta"
                 className={`flex w-full items-center justify-center gap-2 rounded-lg py-3 font-bold text-white transition-colors ${isOnSale ? "bg-orange-500 hover:bg-orange-600" : "bg-primary hover:bg-primary/90"}`}
               >
-                FANZAで詳細を見る
+                無料サンプルを見る
                 <ExternalLink className="h-4 w-4" />
               </FanzaLink>
             </div>
@@ -502,12 +502,12 @@ export default async function WorkDetailPage({
                   source="sidebar_cta"
                   className={`mt-4 flex w-full items-center justify-center gap-2 rounded-lg py-3 font-bold text-white transition-colors ${isOnSale ? "bg-orange-500 hover:bg-orange-600" : "bg-primary hover:bg-primary/90"}`}
                 >
-                  FANZAで購入
+                  無料サンプルを見る
                   <ExternalLink className="h-4 w-4" />
                 </FanzaLink>
 
                 <p className="mt-3 text-center text-xs text-muted-foreground">
-                  ※FANZAの商品ページへ移動します
+                  FANZAの商品ページへ移動します
                 </p>
               </div>
 
@@ -624,7 +624,7 @@ export default async function WorkDetailPage({
             source="fixed_cta"
             className={`flex items-center gap-2 rounded-lg px-4 py-3 font-bold text-white whitespace-nowrap ${isOnSale ? "bg-orange-500" : "bg-primary"}`}
           >
-            FANZAで見る
+            サンプルを見る
             <ExternalLink className="h-4 w-4 shrink-0" />
           </FanzaLink>
         </div>
