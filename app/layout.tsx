@@ -28,6 +28,21 @@ export const metadata: Metadata = {
     description:
       "FANZA VRの人気作品をレビュー。おすすめランキング、セール情報を毎日更新。",
     type: "website",
+    images: [
+      {
+        url: "https://vr-adb.com/ogp/top_ogp.png",
+        width: 1200,
+        height: 630,
+        alt: "VR-ADB | アダルトVR動画レビュー",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "VR-ADB | アダルトVR動画レビュー",
+    description:
+      "FANZA VRの人気作品をレビュー。おすすめランキング、セール情報を毎日更新。",
+    images: ["https://vr-adb.com/ogp/top_ogp.png"],
   },
 };
 

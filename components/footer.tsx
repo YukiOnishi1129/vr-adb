@@ -28,6 +28,15 @@ export function Footer() {
             プライバシーポリシー
           </Link>
         </div>
+        {/* 姉妹サイト */}
+        <div className="mb-4">
+          <p className="mb-2 text-xs text-foreground/40">姉妹サイト</p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a href="https://av-adb.com" className="hover:text-foreground" target="_blank" rel="noopener noreferrer">
+              AV-ADB（AV動画）
+            </a>
+          </div>
+        </div>
         {/* FANZA API クレジット表記 */}
         <p className="mt-4 text-xs text-foreground/40">
           Powered by{" "}

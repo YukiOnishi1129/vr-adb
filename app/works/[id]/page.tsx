@@ -14,6 +14,7 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { BreadcrumbJsonLd, ProductJsonLd } from "@/components/json-ld";
 import { WorkCard } from "@/components/work-card";
+import { SisterSiteBanner } from "@/components/sister-site-banner";
 import {
   getWorks,
   getWorkById,
@@ -585,6 +586,9 @@ export default async function WorkDetailPage({
             </section>
           )}
         </div>
+
+        {/* 姉妹サイトバナー */}
+        <SisterSiteBanner />
       </main>
 
       <Footer />
