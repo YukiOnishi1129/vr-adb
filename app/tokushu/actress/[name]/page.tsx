@@ -38,8 +38,8 @@ export async function generateMetadata({ params }: Props) {
   }
 
   return {
-    title: `${feature.name}のVR特集 | VR-ADB`,
-    description: feature.description,
+    title: `${feature.name}のVR特集 レビュー・感想 | VR-ADB`,
+    description: `${feature.name}のVR作品レビュー・感想。${feature.description}`,
   };
 }
 

@@ -21,8 +21,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const title = `${name}のVR作品一覧（${works.length}作品） | VR-ADB`;
-  const description = `${name}が出演するアダルトVR動画${works.length}作品を掲載。人気作品やセール情報もチェック！`;
+  const title = `${name}のVR作品一覧 レビュー・感想（${works.length}作品） | VR-ADB`;
+  const description = `${name}が出演するアダルトVR動画${works.length}作品のレビュー・感想を掲載。人気作品やセール情報もチェック！`;
 
   return {
     title,

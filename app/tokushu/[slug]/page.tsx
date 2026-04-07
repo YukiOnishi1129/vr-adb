@@ -51,10 +51,10 @@ export async function generateMetadata({
   }
 
   const year = new Date().getFullYear();
-  const title = `【${year}年】${feature.name}VRおすすめ${feature.workCount}選｜厳選VR作品 | VR-ADB`;
-  const description = `${feature.name}好きにおすすめのVR作品を厳選${feature.workCount}作品紹介。${
+  const title = `【${year}年】${feature.name}VRおすすめ${feature.workCount}選 レビュー・感想｜厳選VR作品 | VR-ADB`;
+  const description = `${feature.name}好きにおすすめのVR作品を厳選${feature.workCount}作品レビュー。${
     feature.headline || `${feature.name}ジャンルで評価の高い作品`
-  }をランキング形式で掲載。セール情報も随時更新中。`;
+  }をランキング形式で掲載。感想・セール情報も随時更新中。`;
 
   const ogImage = feature.thumbnailUrl || undefined;
 
