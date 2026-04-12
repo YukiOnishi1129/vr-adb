@@ -116,8 +116,10 @@ function generateSitemap() {
 `;
   }
 
-  // 女優一覧ページ
-  for (const actress of actressFeatures) {
+  // 女優個別ページ（全女優）
+  const actresses = loadJson("actresses.json");
+  for (const actress of actresses) {
+    if (!actress.name) continue;
     const encodedName = encodeURIComponent(actress.name);
     xml += `  <url>
     <loc>${BASE_URL}/actresses/${encodedName}/</loc>
@@ -162,7 +164,8 @@ function generateSitemap() {
   const totalUrls =
     staticPages.length +
     works.length +
-    actressFeatures.length * 2 +
+    actressFeatures.length +
+    actresses.length +
     genres.length +
     featureRecommendations.length;
 
