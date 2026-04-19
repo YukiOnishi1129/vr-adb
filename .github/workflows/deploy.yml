@@ -1,12 +1,6 @@
 name: Deploy to Shin Rental Server
 
 on:
-  push:
-    branches:
-      - main
-    paths-ignore:
-      - 'docs/**'
-      - '**/*.md'
   schedule:
     # 毎日17:00 JST (08:00 UTC) - dailyバッチ完了後
     - cron: '0 8 * * *'
