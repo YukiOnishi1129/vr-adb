@@ -10,6 +10,7 @@ export const metadata = {
   title: "人気女優VR特集一覧 | VR-ADB",
   description:
     "FANZAランキング上位の人気女優のVR作品を厳選して特集。迷ったらここから選べば間違いなし。",
+  alternates: { canonical: "/tokushu/actress/" },
 };
 
 export default async function ActressFeatureListPage() {

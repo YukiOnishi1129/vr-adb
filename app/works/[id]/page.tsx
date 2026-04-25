@@ -12,7 +12,8 @@ import { notFound } from "next/navigation";
 import { FanzaLink } from "@/components/fanza-link";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import { BreadcrumbJsonLd, ProductJsonLd, ReviewJsonLd } from "@/components/json-ld";
+import { BreadcrumbJsonLd, ProductJsonLd, ReviewJsonLd, FaqJsonLd } from "@/components/json-ld";
+import { buildWorkFaq } from "@/lib/work-faq";
 import { WorkCard } from "@/components/work-card";
 import { SisterSiteBanner } from "@/components/sister-site-banner";
 import {
@@ -51,6 +52,7 @@ export async function generateMetadata({
   return {
     title: pageTitle,
     description,
+    alternates: { canonical: `/works/${work.id}/` },
     openGraph: {
       title: work.title,
       description,
@@ -123,6 +125,8 @@ export default async function WorkDetailPage({
     return <span className="inline-flex items-center">{stars}</span>;
   };
 
+  const faqItems = buildWorkFaq(work);
+
   return (
     <div className="min-h-screen bg-background">
       <ProductJsonLd work={work} />
@@ -133,6 +137,7 @@ export default async function WorkDetailPage({
           { name: work.title, url: `https://vr-adb.com/works/${work.id}/` },
         ]}
       />
+      <FaqJsonLd items={faqItems} />
       <Header />
 
       {/* セールヘッダーバナー（ヘッダーの下に固定） */}
@@ -178,13 +183,20 @@ export default async function WorkDetailPage({
               <div className="absolute bottom-3 right-3 rounded bg-black/70 px-3 py-1 text-sm text-white">
                 {work.vrType}
               </div>
-              {/* 高評価バッジ */}
-              {work.rating >= 4.5 && (
-                <div className="absolute bottom-3 left-3 flex items-center gap-1 rounded bg-amber-500/90 px-2 py-1 text-xs font-bold text-white">
-                  <Star className="h-3 w-3 fill-white" />
-                  高評価
-                </div>
-              )}
+              {/* 評価・レビュー数バッジ（社会的証明） */}
+              <div className="absolute bottom-3 left-3 flex flex-wrap gap-1.5">
+                {work.rating >= 4.0 && (
+                  <div className="inline-flex items-center gap-1 rounded-full bg-amber-500 px-3 py-1 text-xs font-bold text-white shadow-lg backdrop-blur-sm">
+                    {work.rating >= 4.5 ? "🌟" : "⭐"} ★{work.rating.toFixed(1)}
+                    {work.rating >= 4.5 && <span className="ml-0.5">高評価</span>}
+                  </div>
+                )}
+                {work.reviewCount >= 10 && (
+                  <div className="inline-flex items-center gap-1 rounded-full bg-black/75 px-3 py-1 text-xs font-bold text-white backdrop-blur-sm">
+                    💬 {work.reviewCount.toLocaleString()}件のレビュー
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* タイトル */}
@@ -588,6 +600,33 @@ export default async function WorkDetailPage({
               <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
                 {popularWorks.map((w) => (
                   <WorkCard key={w.id} work={w} />
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* FAQ（よくある質問） */}
+          {faqItems.length > 0 && (
+            <section className="mt-10 space-y-3">
+              <h2 className="text-lg font-bold text-foreground">
+                ❓ よくある質問
+              </h2>
+              <div className="space-y-2">
+                {faqItems.map((item, index) => (
+                  <details
+                    key={index}
+                    className="group rounded-lg border border-border bg-card transition-colors open:bg-secondary/30"
+                  >
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-2 px-4 py-3 font-medium text-foreground">
+                      <span className="text-sm">Q. {item.question}</span>
+                      <span className="text-xs text-muted-foreground transition-transform group-open:rotate-180">
+                        ▼
+                      </span>
+                    </summary>
+                    <div className="border-t border-border px-4 py-3 text-sm text-muted-foreground">
+                      <p className="whitespace-pre-line">A. {item.answer}</p>
+                    </div>
+                  </details>
                 ))}
               </div>
             </section>

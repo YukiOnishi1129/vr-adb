@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { ChevronRight, Tag, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { Footer } from "@/components/footer";
@@ -12,6 +13,12 @@ import {
   getWorkByNumericId,
   getFeatureRecommendations,
 } from "@/lib/data-loader";
+
+export const metadata: Metadata = {
+  title: "VR動画ジャンル一覧 | VR-ADB",
+  description: "FANZA VR動画のジャンル一覧。お好みのジャンルから作品を探せます。",
+  alternates: { canonical: "/genres/" },
+};
 
 export const dynamic = "force-static";
 

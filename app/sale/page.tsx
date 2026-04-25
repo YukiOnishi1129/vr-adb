@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Flame } from "lucide-react";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
@@ -10,6 +11,12 @@ import {
   getWorkByNumericId,
 } from "@/lib/data-loader";
 import type { SearchItem } from "@/lib/search";
+
+export const metadata: Metadata = {
+  title: "セール中のVR動画一覧 | VR-ADB",
+  description: "今お得に買えるFANZA VR動画作品をまとめてチェック。割引率・価格順で並び替え可能。",
+  alternates: { canonical: "/sale/" },
+};
 
 export const dynamic = "force-static";
 

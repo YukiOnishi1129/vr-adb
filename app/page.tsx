@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
@@ -5,6 +6,10 @@ import { HorizontalScrollSection } from "@/components/horizontal-scroll-section"
 import { SaleBanner } from "@/components/sale-banner";
 import { FeaturedBanners } from "@/components/featured-banners";
 import { Badge } from "@/components/ui/badge";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 import {
   getWorksByRanking,
   getSaleWorks,

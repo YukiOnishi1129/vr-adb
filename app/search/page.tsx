@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { SearchContent } from "@/components/search-content";
@@ -6,6 +7,13 @@ import {
   getLatestDailyRecommendation,
   getWorkByNumericId,
 } from "@/lib/data-loader";
+
+export const metadata: Metadata = {
+  title: "VR動画検索 | VR-ADB",
+  description: "FANZA VR動画作品を検索。タイトル、女優、ジャンルで絞り込み。",
+  alternates: { canonical: "/search/" },
+  robots: { index: false, follow: true },
+};
 
 export const dynamic = "force-static";
 

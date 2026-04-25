@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+
+export const metadata: Metadata = {
+  title: "プライバシーポリシー | VR-ADB",
+  alternates: { canonical: "/privacy/" },
+};
 
 export default function PrivacyPage() {
   return (

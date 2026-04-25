@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ChevronRight, Users } from "lucide-react";
 import { Header } from "@/components/header";
@@ -13,6 +14,12 @@ import {
   getWorkByNumericId,
   getActressFeatures,
 } from "@/lib/data-loader";
+
+export const metadata: Metadata = {
+  title: "VR動画女優一覧 | VR-ADB",
+  description: "FANZA VR動画の人気女優一覧。お気に入りの女優の作品をチェック。",
+  alternates: { canonical: "/actresses/" },
+};
 
 export const dynamic = "force-static";
 
