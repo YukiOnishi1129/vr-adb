@@ -14,6 +14,7 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { BreadcrumbJsonLd, ProductJsonLd, ReviewJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { buildWorkFaq } from "@/lib/work-faq";
+import { getFanzaInitialDiscount } from "@/lib/fanza-promo";
 import { WorkCard } from "@/components/work-card";
 import { SisterSiteBanner } from "@/components/sister-site-banner";
 import {
@@ -268,6 +269,48 @@ export default async function WorkDetailPage({
               <p className="mt-2 text-center text-xs text-muted-foreground">
                 FANZAの商品ページへ移動します
               </p>
+
+              {/* FANZA動画 初回500円OFF訴求（条件を満たす作品のみ） */}
+              {(() => {
+                const discount = getFanzaInitialDiscount(work);
+                if (!discount) return null;
+                return (
+                  <div className="mt-3 rounded-md border-2 border-pink-500 bg-gradient-to-br from-pink-500/15 to-pink-600/10 p-3 shadow-md">
+                    <div className="mb-2 flex items-center gap-2">
+                      <span className="inline-flex items-center rounded-full bg-pink-500 px-2 py-0.5 text-xs font-bold text-white">
+                        初回購入限定
+                      </span>
+                      <span className="text-xs text-muted-foreground">
+                        FANZA動画 はじめての方
+                      </span>
+                    </div>
+                    <p className="text-base font-bold text-foreground">
+                      実質{" "}
+                      <span className="text-2xl text-pink-500">
+                        ¥{discount.effectivePrice.toLocaleString()}
+                      </span>
+                      <span className="ml-2 text-xs text-muted-foreground">
+                        （¥{discount.couponOff.toLocaleString()}OFFクーポン適用時）
+                      </span>
+                    </p>
+                    <p className="mt-1 text-xs text-muted-foreground">
+                      無料会員登録でクーポン取得可能（7日間有効）
+                    </p>
+                    <FanzaLink
+                      url={discount.couponLandingUrl}
+                      contentId={work.id}
+                      source="welcome_coupon_cta"
+                      eventName="fanza_signup_click"
+                      className="mt-2 flex w-full items-center justify-center gap-2 rounded-lg bg-pink-500 py-2.5 font-bold text-white transition-colors hover:bg-pink-600"
+                    >
+                      クーポンを取得する →
+                    </FanzaLink>
+                    <p className="mt-1.5 text-center text-[10px] text-muted-foreground">
+                      ※対象商品に限ります
+                    </p>
+                  </div>
+                );
+              })()}
             </div>
 
             {/* 再生時間・配信日 */}
