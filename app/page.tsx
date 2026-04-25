@@ -6,7 +6,7 @@ import { HorizontalScrollSection } from "@/components/horizontal-scroll-section"
 import { SaleBanner } from "@/components/sale-banner";
 import { FeaturedBanners } from "@/components/featured-banners";
 import { CampaignBanner } from "@/components/campaign-banner";
-import { isGwCampaignActive, getGwCampaignAffiliateUrl } from "@/lib/gw-campaign";
+import { isGwCampaignActive, getGwCampaignAffiliateUrl, CAMPAIGN_END_ISO as GW_END } from "@/lib/gw-campaign";
 import { Badge } from "@/components/ui/badge";
 
 export const metadata: Metadata = {
@@ -79,6 +79,7 @@ export default async function HomePage() {
             title="GOLDEN WEEK 50%OFF"
             description="対象作品が今だけ半額！VR作品も対象"
             ctaLabel="特集を見る →"
+            endDate={GW_END}
           />
         )}
 

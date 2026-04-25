@@ -15,7 +15,7 @@ import { Header } from "@/components/header";
 import { BreadcrumbJsonLd, ProductJsonLd, ReviewJsonLd, FaqJsonLd } from "@/components/json-ld";
 import { buildWorkFaq } from "@/lib/work-faq";
 import { getFanzaInitialDiscount } from "@/lib/fanza-promo";
-import { isGwCampaignWork, getGwCampaignAffiliateUrl } from "@/lib/gw-campaign";
+import { isGwCampaignWork, getGwCampaignAffiliateUrl, CAMPAIGN_END_ISO as GW_END } from "@/lib/gw-campaign";
 import { GwCampaignBadge } from "@/components/gw-campaign-badge";
 import { WorkCard } from "@/components/work-card";
 import { SisterSiteBanner } from "@/components/sister-site-banner";
@@ -214,6 +214,7 @@ export default async function WorkDetailPage({
                 <GwCampaignBadge
                   href={getGwCampaignAffiliateUrl()}
                   workId={work.id}
+                  endDate={GW_END}
                 />
               )}
 
