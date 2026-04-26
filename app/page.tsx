@@ -7,6 +7,7 @@ import { SaleBanner } from "@/components/sale-banner";
 import { FeaturedBanners } from "@/components/featured-banners";
 import { CampaignBanner } from "@/components/campaign-banner";
 import { isGwCampaignActive, getGwCampaignAffiliateUrl, CAMPAIGN_END_ISO as GW_END } from "@/lib/gw-campaign";
+import { getFanzaSignupCtaUrl, isFanzaSignupCtaActive } from "@/lib/fanza-promo";
 import { Badge } from "@/components/ui/badge";
 
 export const metadata: Metadata = {
@@ -80,6 +81,20 @@ export default async function HomePage() {
             description="対象作品が今だけ半額！VR作品も対象"
             ctaLabel="特集を見る →"
             endDate={GW_END}
+          />
+        )}
+
+        {/* FANZA動画 無料会員登録 500円OFFクーポン CTA（恒久施策、新規会員登録獲得目的） */}
+        {isFanzaSignupCtaActive() && (
+          <CampaignBanner
+            href={getFanzaSignupCtaUrl()}
+            eventName="fanza_signup_click"
+            extraEventParams={{ source: "top_cta_banner" }}
+            gradientClass="bg-gradient-to-r from-pink-500 via-pink-600 to-rose-600"
+            badge="🎁 初回購入限定"
+            title="FANZA動画 500円OFFクーポン進呈中"
+            description="無料会員登録するだけで取得可能・VR作品も対象"
+            ctaLabel="クーポンを取得 →"
           />
         )}
 

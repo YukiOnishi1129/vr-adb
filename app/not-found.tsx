@@ -3,6 +3,12 @@ import Link from "next/link";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 
+export const metadata = {
+  title: "ページが見つかりません | VR-ADB",
+  description: "お探しのページは削除されたか、URLが間違っている可能性があります。トップページや人気ランキング・女優一覧から作品を探してください。",
+  robots: { index: false, follow: true },
+};
+
 export default function NotFound() {
   return (
     <div className="min-h-screen bg-background">

@@ -28,6 +28,23 @@ function buildCouponAffiliateUrl(): string {
   return `https://al.fanza.co.jp/?lurl=${encodeURIComponent(FANZA_VIDEO_COUPON_LANDING_URL)}&af_id=${FANZA_AFFILIATE_ID}&ch=toolbar&ch_id=link`;
 }
 
+/**
+ * トップページなど作品依存しない場所で使う「FANZA動画 無料会員登録CTA」用のURL。
+ * 戦略: 新規会員登録 1件 = 1,800円 のサービス新規報酬を狙う。
+ * 作品ごとの初回クーポン（getFanzaInitialDiscount）と異なり、
+ * 作品に紐づかない汎用ランディングへの遷移用。
+ */
+export function getFanzaSignupCtaUrl(): string {
+  return buildCouponAffiliateUrl();
+}
+
+/**
+ * キャンペーン期間中かどうか（無料会員登録CTA表示判定用）
+ */
+export function isFanzaSignupCtaActive(): boolean {
+  return isCampaignActive();
+}
+
 export interface FanzaInitialDiscount {
   couponOff: number;
   effectivePrice: number;
