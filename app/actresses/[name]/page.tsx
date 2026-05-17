@@ -4,6 +4,9 @@ import Link from "next/link";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { WorkCard } from "@/components/work-card";
+import { LastUpdated } from "@/components/last-updated";
+import { EditorialCredit } from "@/components/editorial-credit";
+import { PersonJsonLd } from "@/components/json-ld";
 import { getActresses, getWorksByActress } from "@/lib/data-loader";
 
 interface Props {
@@ -21,8 +24,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const title = `${name}のVR作品一覧 レビュー・感想（${works.length}作品） | VR-ADB`;
-  const description = `${name}が出演するアダルトVR動画${works.length}作品のレビュー・感想を掲載。人気作品やセール情報もチェック！`;
+  const year = new Date().getFullYear();
+  const saleCount = works.filter((w) => w.listPrice > 0 && w.price < w.listPrice).length;
+  const saleBadge = saleCount > 0 ? `【${saleCount}本セール中】` : "";
+  const title = `${saleBadge}【${year}年最新】${name}のアダルトVR作品おすすめ${works.length}選｜出演動画レビュー | VR-ADB`;
+  const description = `女優「${name}」が出演するアダルトVR動画${works.length}作品をVR-ADB編集部がレビュー。人気作・新作・セール作品をまとめてチェック。${saleCount > 0 ? `現在${saleCount}本がセール中。` : ""}FANZAで購入可能。`;
 
   return {
     title,
@@ -53,23 +59,40 @@ export default async function ActressDetailPage({ params }: Props) {
   const name = decodeURIComponent(rawName);
   const works = await getWorksByActress(name);
 
+  const topThumbnail = [...works]
+    .sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0))[0]?.thumbnailUrl ?? null;
+  const actressPageUrl = `https://vr-adb.com/actresses/${rawName}/`;
+  const avgRating = works.length > 0
+    ? works.reduce((s, w) => s + (w.rating || 0), 0) / works.length
+    : null;
+
   return (
     <div className="min-h-screen bg-background">
+      <PersonJsonLd
+        name={name}
+        workCount={works.length}
+        avgRating={avgRating}
+        thumbnailUrl={topThumbnail}
+        pageUrl={actressPageUrl}
+      />
       <Header />
 
       <main className="mx-auto max-w-5xl px-4 py-6 pb-24 lg:pb-6">
-        {/* パンくず */}
-        <nav className="mb-4 flex items-center gap-1 text-sm text-muted-foreground">
-          <Link href="/" className="hover:text-foreground">
-            トップ
-          </Link>
-          <ChevronRight className="h-4 w-4" />
-          <Link href="/actresses" className="hover:text-foreground">
-            出演者
-          </Link>
-          <ChevronRight className="h-4 w-4" />
-          <span className="text-foreground">{name}</span>
-        </nav>
+        {/* パンくず + 最終更新日 */}
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+          <nav className="flex items-center gap-1 text-sm text-muted-foreground">
+            <Link href="/" className="hover:text-foreground">
+              トップ
+            </Link>
+            <ChevronRight className="h-4 w-4" />
+            <Link href="/actresses" className="hover:text-foreground">
+              出演者
+            </Link>
+            <ChevronRight className="h-4 w-4" />
+            <span className="text-foreground">{name}</span>
+          </nav>
+          <LastUpdated variant="card" />
+        </div>
 
         {/* ヘッダー */}
         <div className="mb-6 flex items-center gap-4">
@@ -94,6 +117,8 @@ export default async function ActressDetailPage({ params }: Props) {
             この出演者の作品はまだ登録されていません。
           </p>
         )}
+
+        <EditorialCredit />
       </main>
 
       <Footer />

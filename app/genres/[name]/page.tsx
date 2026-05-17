@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { WorkCard } from "@/components/work-card";
+import { LastUpdated } from "@/components/last-updated";
+import { EditorialCredit } from "@/components/editorial-credit";
 import { getGenres, getWorksByGenre } from "@/lib/data-loader";
 
 interface Props {
@@ -21,8 +23,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const title = `「${name}」ジャンルのVR作品一覧 レビュー・感想（${works.length}作品） | VR-ADB`;
-  const description = `「${name}」ジャンルのアダルトVR動画${works.length}作品のレビュー・感想を掲載。人気作品やセール情報もチェック！`;
+  const year = new Date().getFullYear();
+  const saleCount = works.filter((w) => w.listPrice > 0 && w.price < w.listPrice).length;
+  const saleBadge = saleCount > 0 ? `【${saleCount}本セール中】` : "";
+  const title = `${saleBadge}【${year}年最新】「${name}」のアダルトVR動画おすすめ${works.length}選｜ジャンル別レビュー | VR-ADB`;
+  const description = `「${name}」ジャンルのアダルトVR動画${works.length}作品をVR-ADB編集部がレビュー。人気作・新作・セール作品をまとめてチェック。${saleCount > 0 ? `現在${saleCount}本がセール中。` : ""}FANZAで購入可能。`;
 
   return {
     title,
@@ -58,18 +63,21 @@ export default async function GenreDetailPage({ params }: Props) {
       <Header />
 
       <main className="mx-auto max-w-5xl px-4 py-6 pb-24 lg:pb-6">
-        {/* パンくず */}
-        <nav className="mb-4 flex items-center gap-1 text-sm text-muted-foreground">
-          <Link href="/" className="hover:text-foreground">
-            トップ
-          </Link>
-          <ChevronRight className="h-4 w-4" />
-          <Link href="/genres" className="hover:text-foreground">
-            ジャンル
-          </Link>
-          <ChevronRight className="h-4 w-4" />
-          <span className="text-foreground">{name}</span>
-        </nav>
+        {/* パンくず + 最終更新日 */}
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+          <nav className="flex items-center gap-1 text-sm text-muted-foreground">
+            <Link href="/" className="hover:text-foreground">
+              トップ
+            </Link>
+            <ChevronRight className="h-4 w-4" />
+            <Link href="/genres" className="hover:text-foreground">
+              ジャンル
+            </Link>
+            <ChevronRight className="h-4 w-4" />
+            <span className="text-foreground">{name}</span>
+          </nav>
+          <LastUpdated variant="card" />
+        </div>
 
         {/* ヘッダー */}
         <div className="mb-6 flex items-center gap-3">
@@ -94,6 +102,8 @@ export default async function GenreDetailPage({ params }: Props) {
             このジャンルの作品はまだ登録されていません。
           </p>
         )}
+
+        <EditorialCredit />
       </main>
 
       <Footer />

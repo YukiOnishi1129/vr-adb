@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { LastUpdated } from "@/components/last-updated";
+import { PurposeNavigation } from "@/components/purpose-navigation";
 import { HorizontalScrollSection } from "@/components/horizontal-scroll-section";
 import { SaleBanner } from "@/components/sale-banner";
 import { FeaturedBanners } from "@/components/featured-banners";
@@ -70,6 +72,14 @@ export default async function HomePage() {
       <Header />
 
       <main className="mx-auto max-w-5xl px-4 py-6 pb-24 lg:pb-6">
+        {/* SEO用 h1 + 最終更新日 */}
+        <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+          <h1 className="text-sm font-medium text-muted-foreground sm:text-base">
+            VR-ADB | アダルトVR動画の厳選レビューサイト
+          </h1>
+          <LastUpdated variant="card" />
+        </div>
+
         {/* GW 50%OFFキャンペーンバナー（〜2026/05/15まで） */}
         {isGwCampaignActive() && (
           <CampaignBanner
@@ -109,6 +119,9 @@ export default async function HomePage() {
           features={featureRecommendations}
           actressFeatures={actressFeatures}
         />
+
+        {/* 目的別ナビゲーション */}
+        <PurposeNavigation />
 
         {/* VRランキング（横スクロール＋金銀銅バッジ） */}
         {rankingWorks.length > 0 && (
