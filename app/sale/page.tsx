@@ -12,6 +12,9 @@ import {
 } from "@/lib/data-loader";
 import type { SearchItem } from "@/lib/search";
 
+// SSGでHTMLに埋め込む作品数の上限（Googlebotの2MBクロール上限対策）
+const MAX_SSG_WORKS = 200;
+
 export const metadata: Metadata = {
   title: "セール中のVR動画一覧 | VR-ADB",
   description: "今お得に買えるFANZA VR動画作品をまとめてチェック。割引率・価格順で並び替え可能。",
@@ -80,7 +83,12 @@ export default async function SalePage() {
   const saleWorks = works.filter((w) => w.listPrice > 0 && w.price < w.listPrice);
 
   // SearchItem形式に変換
-  const saleItems: SearchItem[] = saleWorks.map(workToSearchItem);
+  // クライアントに渡す件数を制限する。
+  // 全件（実測2,059件）渡すとHTMLが2MBを超え、Googlebotのクロール上限に達する。
+  const saleItems: SearchItem[] = saleWorks
+    .slice(0, MAX_SSG_WORKS)
+    .map(workToSearchItem);
+  const totalSaleCount = saleWorks.length;
 
   // セール特集のメイン作品のサムネイルを取得
   let saleThumbnailUrl: string | null = saleFeature?.featuredThumbnailUrl || null;
@@ -99,7 +107,7 @@ export default async function SalePage() {
           <Flame className="h-5 w-5 text-red-500" />
           <h1 className="text-xl font-bold text-foreground">セール中の作品</h1>
           <span className="text-sm text-muted-foreground">
-            （{saleItems.length}件）
+            （{totalSaleCount}件）
           </span>
         </div>
 

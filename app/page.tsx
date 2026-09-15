@@ -30,6 +30,9 @@ import {
   getActressFeatures,
 } from "@/lib/data-loader";
 
+// 横スクロールセクションに渡す作品数の上限（表示は12件）
+const MAX_SECTION_WORKS = 50;
+
 export default async function HomePage() {
   // データ取得
   const [
@@ -45,8 +48,11 @@ export default async function HomePage() {
     featureRecommendations,
     actressFeatures,
   ] = await Promise.all([
-    getWorksByRanking(),
-    getSaleWorks(),
+    // 表示は先頭12件だが、取得関数は全件返すためここで絞る。
+    // 全件をRSCペイロードに載せるとHTMLが2MBを超え、
+    // Googlebotのクロール上限に達する（実測7MB）。
+    getWorksByRanking().then((w) => w.slice(0, MAX_SECTION_WORKS)),
+    getSaleWorks().then((w) => w.slice(0, MAX_SECTION_WORKS)),
     getHighRatedWorks(4.0, 12),
     getBargainWorks(1000, 12),
     getNewWorks(12),

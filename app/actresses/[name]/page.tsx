@@ -9,6 +9,9 @@ import { EditorialCredit } from "@/components/editorial-credit";
 import { PersonJsonLd } from "@/components/json-ld";
 import { getActresses, getWorksByActress } from "@/lib/data-loader";
 
+// SSGでHTMLに埋め込む作品数の上限（Googlebotの2MBクロール上限対策）
+const MAX_SSG_WORKS = 100;
+
 interface Props {
   params: Promise<{ name: string }>;
 }
@@ -108,7 +111,7 @@ export default async function ActressDetailPage({ params }: Props) {
         {/* 作品一覧 */}
         {works.length > 0 ? (
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {works.map((work) => (
+            {works.slice(0, MAX_SSG_WORKS).map((work) => (
               <WorkCard key={work.id} work={work} />
             ))}
           </div>

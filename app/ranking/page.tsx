@@ -6,6 +6,12 @@ import { Header } from "@/components/header";
 import { WorkCard } from "@/components/work-card";
 import { getWorks } from "@/lib/data-loader";
 
+// SSGでHTMLに埋め込む作品数の上限。
+// 全件出すとHTMLが2MBを超え、Googlebotのクロール上限に達して
+// ページ後半がインデックスされなくなる（実測: /ranking 79MB, /genres 42MB）。
+const MAX_SSG_WORKS = 100;
+
+
 export const metadata: Metadata = {
   title: "VR動画ランキング | VR-ADB",
   description: "FANZA VR動画の人気ランキング。評価が高い作品を厳選して紹介。",
@@ -60,7 +66,7 @@ export default async function RankingPage() {
         {/* ランキング一覧 */}
         {rankedWorks.length > 0 ? (
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {rankedWorks.map((work, index) => {
+            {rankedWorks.slice(0, MAX_SSG_WORKS).map((work, index) => {
               const rank = index + 1;
               return (
                 <div key={work.id} className="relative">
