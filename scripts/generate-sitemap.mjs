@@ -95,10 +95,13 @@ function generateSitemap() {
   }
 
   // 作品ページ（サムネ画像を <image:image> で含めて画像検索からの流入を狙う）
+  // URLは fanza_product_id を使う。works.json の id は内部の連番で、
+  // 実際のルーティング（lib/data-loader.ts の convertToWork）は
+  // fanza_product_id を id として扱うため、連番を使うと全URLが404になる。
   for (const work of works) {
     const lastmod = formatDate(work.release_date || work.updated_at);
     xml += `  <url>
-    <loc>${BASE_URL}/works/${work.id}/</loc>
+    <loc>${BASE_URL}/works/${work.fanza_product_id}/</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
