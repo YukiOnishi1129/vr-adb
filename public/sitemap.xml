@@ -3,73 +3,73 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://vr-adb.com/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/ranking/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/sale/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/sale/tokushu/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/tokushu/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/tokushu/actress/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/recommendations/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/editorial/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/privacy/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/1/</loc>
-    <lastmod>2022-04-06</lastmod>
+    <loc>https://vr-adb.com/works/sivr00201/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -78,8 +78,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/29/</loc>
-    <lastmod>2019-08-09</lastmod>
+    <loc>https://vr-adb.com/works/sivr00049/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -88,8 +88,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/28/</loc>
-    <lastmod>2022-03-16</lastmod>
+    <loc>https://vr-adb.com/works/13dsvr01095/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -98,8 +98,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/27/</loc>
-    <lastmod>2025-02-23</lastmod>
+    <loc>https://vr-adb.com/works/sivr00396/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -108,8 +108,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/26/</loc>
-    <lastmod>2026-02-19</lastmod>
+    <loc>https://vr-adb.com/works/13dsvr01933/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -118,7 +118,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/25/</loc>
+    <loc>https://vr-adb.com/works/crvr00400/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -128,8 +128,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/24/</loc>
-    <lastmod>2026-02-21</lastmod>
+    <loc>https://vr-adb.com/works/savr00966/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -138,8 +138,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/23/</loc>
-    <lastmod>2025-02-22</lastmod>
+    <loc>https://vr-adb.com/works/hnvr00152/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -148,8 +148,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/22/</loc>
-    <lastmod>2026-02-22</lastmod>
+    <loc>https://vr-adb.com/works/sivr00471/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -158,8 +158,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/21/</loc>
-    <lastmod>2026-02-19</lastmod>
+    <loc>https://vr-adb.com/works/vrkm01764/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -168,8 +168,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/20/</loc>
-    <lastmod>2026-02-19</lastmod>
+    <loc>https://vr-adb.com/works/vrprd00166/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -178,8 +178,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/19/</loc>
-    <lastmod>2026-02-20</lastmod>
+    <loc>https://vr-adb.com/works/savr00964/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -188,8 +188,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/18/</loc>
-    <lastmod>2026-02-10</lastmod>
+    <loc>https://vr-adb.com/works/mdvr00406/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -198,8 +198,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/17/</loc>
-    <lastmod>2023-01-06</lastmod>
+    <loc>https://vr-adb.com/works/juvr00160/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -208,8 +208,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/16/</loc>
-    <lastmod>2025-09-12</lastmod>
+    <loc>https://vr-adb.com/works/sivr00444/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -218,8 +218,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/2/</loc>
-    <lastmod>2022-11-15</lastmod>
+    <loc>https://vr-adb.com/works/sivr00243/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -228,8 +228,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/3/</loc>
-    <lastmod>2026-02-03</lastmod>
+    <loc>https://vr-adb.com/works/urvrsp00537/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -238,8 +238,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/4/</loc>
-    <lastmod>2024-03-08</lastmod>
+    <loc>https://vr-adb.com/works/mdvr00259/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -248,8 +248,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/5/</loc>
-    <lastmod>2024-02-09</lastmod>
+    <loc>https://vr-adb.com/works/ipvr00256/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -258,8 +258,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/6/</loc>
-    <lastmod>2025-02-24</lastmod>
+    <loc>https://vr-adb.com/works/kavr00403/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -268,8 +268,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/7/</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://vr-adb.com/works/fcvr00065/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -278,8 +278,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/8/</loc>
-    <lastmod>2026-02-23</lastmod>
+    <loc>https://vr-adb.com/works/13dsvr01871/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -288,8 +288,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/9/</loc>
-    <lastmod>2026-02-05</lastmod>
+    <loc>https://vr-adb.com/works/urvrsp00536/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -298,7 +298,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/10/</loc>
+    <loc>https://vr-adb.com/works/sivr00469/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -308,8 +308,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/11/</loc>
-    <lastmod>2021-02-16</lastmod>
+    <loc>https://vr-adb.com/works/sivr00115/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -318,8 +318,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/12/</loc>
-    <lastmod>2026-02-20</lastmod>
+    <loc>https://vr-adb.com/works/savr00975/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -328,8 +328,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/13/</loc>
-    <lastmod>2026-02-19</lastmod>
+    <loc>https://vr-adb.com/works/nkwmr00010/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -338,8 +338,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/14/</loc>
-    <lastmod>2026-02-18</lastmod>
+    <loc>https://vr-adb.com/works/sivr00472/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -348,8 +348,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/15/</loc>
-    <lastmod>2021-10-08</lastmod>
+    <loc>https://vr-adb.com/works/hhhvr00003/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -358,8 +358,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/39/</loc>
-    <lastmod>2025-11-17</lastmod>
+    <loc>https://vr-adb.com/works/13dsvr01863/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -368,8 +368,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/46/</loc>
-    <lastmod>2022-04-01</lastmod>
+    <loc>https://vr-adb.com/works/mdvr00205/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -378,8 +378,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/45/</loc>
-    <lastmod>2025-09-19</lastmod>
+    <loc>https://vr-adb.com/works/urvrsp00492/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -388,8 +388,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/44/</loc>
-    <lastmod>2025-02-18</lastmod>
+    <loc>https://vr-adb.com/works/dsvr00051/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -398,8 +398,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/43/</loc>
-    <lastmod>2025-08-23</lastmod>
+    <loc>https://vr-adb.com/works/savr00744/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -408,8 +408,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/42/</loc>
-    <lastmod>2026-01-23</lastmod>
+    <loc>https://vr-adb.com/works/urvrsp00533/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -418,8 +418,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/41/</loc>
-    <lastmod>2023-09-03</lastmod>
+    <loc>https://vr-adb.com/works/kavr00311/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -428,7 +428,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/40/</loc>
+    <loc>https://vr-adb.com/works/crvr00404/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -438,8 +438,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/38/</loc>
-    <lastmod>2022-01-20</lastmod>
+    <loc>https://vr-adb.com/works/sivr00181/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -448,7 +448,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/37/</loc>
+    <loc>https://vr-adb.com/works/crvr00401/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -458,8 +458,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/36/</loc>
-    <lastmod>2026-02-15</lastmod>
+    <loc>https://vr-adb.com/works/savr00952/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -468,8 +468,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/35/</loc>
-    <lastmod>2025-11-11</lastmod>
+    <loc>https://vr-adb.com/works/mdvr00388/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -478,8 +478,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/34/</loc>
-    <lastmod>2021-12-08</lastmod>
+    <loc>https://vr-adb.com/works/wavr00197/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -488,8 +488,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/33/</loc>
-    <lastmod>2023-07-22</lastmod>
+    <loc>https://vr-adb.com/works/sivr00265/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -498,8 +498,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/32/</loc>
-    <lastmod>2025-02-25</lastmod>
+    <loc>https://vr-adb.com/works/mevr00009/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -508,8 +508,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/31/</loc>
-    <lastmod>2023-10-30</lastmod>
+    <loc>https://vr-adb.com/works/kavr00327/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -518,8 +518,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/30/</loc>
-    <lastmod>2021-09-26</lastmod>
+    <loc>https://vr-adb.com/works/sivr00158/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -528,8 +528,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/47/</loc>
-    <lastmod>2025-02-21</lastmod>
+    <loc>https://vr-adb.com/works/savr00539/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -538,8 +538,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/48/</loc>
-    <lastmod>2019-12-24</lastmod>
+    <loc>https://vr-adb.com/works/hunvr00033/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -548,8 +548,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/64/</loc>
-    <lastmod>2022-10-12</lastmod>
+    <loc>https://vr-adb.com/works/kavr00254/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -558,8 +558,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/63/</loc>
-    <lastmod>2019-01-16</lastmod>
+    <loc>https://vr-adb.com/works/oycvr00024/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -568,8 +568,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/62/</loc>
-    <lastmod>2025-06-23</lastmod>
+    <loc>https://vr-adb.com/works/13dsvr01749/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -578,8 +578,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/61/</loc>
-    <lastmod>2026-02-04</lastmod>
+    <loc>https://vr-adb.com/works/sivr00467/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -588,8 +588,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/60/</loc>
-    <lastmod>2026-02-23</lastmod>
+    <loc>https://vr-adb.com/works/vrprd00165/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -598,8 +598,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/59/</loc>
-    <lastmod>2025-09-14</lastmod>
+    <loc>https://vr-adb.com/works/savr00799/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -608,8 +608,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/58/</loc>
-    <lastmod>2022-05-06</lastmod>
+    <loc>https://vr-adb.com/works/ipvr00176/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -618,8 +618,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/57/</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://vr-adb.com/works/kiwvr00849/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -628,8 +628,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/56/</loc>
-    <lastmod>2025-02-21</lastmod>
+    <loc>https://vr-adb.com/works/ipvr00292/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -638,8 +638,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/55/</loc>
-    <lastmod>2021-11-25</lastmod>
+    <loc>https://vr-adb.com/works/kavr00200/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -648,8 +648,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/54/</loc>
-    <lastmod>2025-11-17</lastmod>
+    <loc>https://vr-adb.com/works/13dsvr01869/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -658,8 +658,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/53/</loc>
-    <lastmod>2020-09-15</lastmod>
+    <loc>https://vr-adb.com/works/hunvr00057/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -668,8 +668,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/52/</loc>
-    <lastmod>2025-12-25</lastmod>
+    <loc>https://vr-adb.com/works/urvrsp00528/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -678,8 +678,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/51/</loc>
-    <lastmod>2026-02-12</lastmod>
+    <loc>https://vr-adb.com/works/nkkvr00188/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -688,8 +688,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/50/</loc>
-    <lastmod>2021-07-20</lastmod>
+    <loc>https://vr-adb.com/works/hunvr00109/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -698,8 +698,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/49/</loc>
-    <lastmod>2025-11-13</lastmod>
+    <loc>https://vr-adb.com/works/13dsvr01846/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -708,8 +708,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/85/</loc>
-    <lastmod>2026-02-15</lastmod>
+    <loc>https://vr-adb.com/works/savr00969/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -718,8 +718,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/86/</loc>
-    <lastmod>2026-02-15</lastmod>
+    <loc>https://vr-adb.com/works/savr00972/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -728,8 +728,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/87/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <loc>https://vr-adb.com/works/kavr00264/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -738,8 +738,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/88/</loc>
-    <lastmod>2026-02-14</lastmod>
+    <loc>https://vr-adb.com/works/savr00915/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -748,8 +748,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/89/</loc>
-    <lastmod>2026-02-20</lastmod>
+    <loc>https://vr-adb.com/works/ipvr00356/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -758,8 +758,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/90/</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://vr-adb.com/works/vrprd00158/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -768,8 +768,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/91/</loc>
-    <lastmod>2022-03-17</lastmod>
+    <loc>https://vr-adb.com/works/hnvr00085/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -778,8 +778,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/92/</loc>
-    <lastmod>2025-01-05</lastmod>
+    <loc>https://vr-adb.com/works/vrkm01465/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -788,8 +788,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/93/</loc>
-    <lastmod>2024-10-17</lastmod>
+    <loc>https://vr-adb.com/works/13dsvr01627/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -798,8 +798,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/94/</loc>
-    <lastmod>2020-07-08</lastmod>
+    <loc>https://vr-adb.com/works/wavr00112/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -808,8 +808,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/95/</loc>
-    <lastmod>2026-02-12</lastmod>
+    <loc>https://vr-adb.com/works/kavr00495/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -818,8 +818,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/96/</loc>
-    <lastmod>2021-03-18</lastmod>
+    <loc>https://vr-adb.com/works/ipvr00103/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -828,8 +828,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/97/</loc>
-    <lastmod>2026-02-20</lastmod>
+    <loc>https://vr-adb.com/works/urvrsp00544/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -838,8 +838,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/83/</loc>
-    <lastmod>2025-06-28</lastmod>
+    <loc>https://vr-adb.com/works/savr00687/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -848,8 +848,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/84/</loc>
-    <lastmod>2025-10-13</lastmod>
+    <loc>https://vr-adb.com/works/13dsvr01821/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -858,8 +858,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/82/</loc>
-    <lastmod>2026-02-13</lastmod>
+    <loc>https://vr-adb.com/works/aquco00164/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -868,8 +868,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/81/</loc>
-    <lastmod>2023-06-06</lastmod>
+    <loc>https://vr-adb.com/works/kavr00286/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -878,8 +878,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/80/</loc>
-    <lastmod>2026-02-23</lastmod>
+    <loc>https://vr-adb.com/works/cjvr00047/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -888,8 +888,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/79/</loc>
-    <lastmod>2026-02-18</lastmod>
+    <loc>https://vr-adb.com/works/sivr00466/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -898,8 +898,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/78/</loc>
-    <lastmod>2021-12-01</lastmod>
+    <loc>https://vr-adb.com/works/hunvr00125/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -908,8 +908,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/76/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <loc>https://vr-adb.com/works/urvrsp00511/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -918,8 +918,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/74/</loc>
-    <lastmod>2025-12-11</lastmod>
+    <loc>https://vr-adb.com/works/13dsvr01864/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -928,8 +928,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/72/</loc>
-    <lastmod>2026-02-22</lastmod>
+    <loc>https://vr-adb.com/works/savr00983/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -938,8 +938,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/71/</loc>
-    <lastmod>2026-01-30</lastmod>
+    <loc>https://vr-adb.com/works/urvrsp00535/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -948,8 +948,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/70/</loc>
-    <lastmod>2025-04-24</lastmod>
+    <loc>https://vr-adb.com/works/13dsvr01738/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -958,8 +958,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/69/</loc>
-    <lastmod>2026-02-03</lastmod>
+    <loc>https://vr-adb.com/works/mdvr00394/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -968,8 +968,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/68/</loc>
-    <lastmod>2025-11-13</lastmod>
+    <loc>https://vr-adb.com/works/13dsvr01858/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -978,8 +978,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/67/</loc>
-    <lastmod>2021-11-17</lastmod>
+    <loc>https://vr-adb.com/works/sivr00167/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -988,8 +988,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/66/</loc>
-    <lastmod>2021-09-14</lastmod>
+    <loc>https://vr-adb.com/works/cjvr00012/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -998,8 +998,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/65/</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://vr-adb.com/works/mdvr00405/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1008,8 +1008,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/98/</loc>
-    <lastmod>2025-06-26</lastmod>
+    <loc>https://vr-adb.com/works/13dsvr01766/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1018,8 +1018,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/75/</loc>
-    <lastmod>2025-02-18</lastmod>
+    <loc>https://vr-adb.com/works/sivr00394/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1028,8 +1028,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/73/</loc>
-    <lastmod>2026-02-17</lastmod>
+    <loc>https://vr-adb.com/works/urvrsp00546/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1038,8 +1038,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/77/</loc>
-    <lastmod>2026-02-23</lastmod>
+    <loc>https://vr-adb.com/works/vrkm01761/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1048,8 +1048,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/99/</loc>
-    <lastmod>2025-03-27</lastmod>
+    <loc>https://vr-adb.com/works/13dsvr01710/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1058,8 +1058,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://vr-adb.com/works/100/</loc>
-    <lastmod>2026-02-23</lastmod>
+    <loc>https://vr-adb.com/works/13dsvr01929/</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1069,1555 +1069,1550 @@
   </url>
   <url>
     <loc>https://vr-adb.com/tokushu/actress/%E9%9D%92%E7%A9%BA%E3%81%B2%E3%81%8B%E3%82%8A/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%A4%A9%E9%9F%B3%E3%81%BE%E3%81%B2%E3%81%AA/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%B0%8F%E5%B3%B6%E3%81%BF%E3%81%AA%E3%81%BF/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E4%B8%89%E4%B8%8A%E6%82%A0%E4%BA%9C/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%B1%B1%E6%89%8B%E6%A2%A8%E6%84%9B/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E3%81%86%E3%82%93%E3%81%B1%E3%81%84/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%9E%B6%E4%B9%83%E3%82%86%E3%82%89/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E9%A6%99%E6%B0%B4%E3%81%98%E3%82%85%E3%82%93/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%A4%A2%E4%B9%83%E3%81%82%E3%81%84%E3%81%8B/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%84%9B%E5%AE%9D%E3%81%99%E3%81%9A/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/miru/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%B2%B3%E5%8C%97%E5%BD%A9%E4%BC%BD%EF%BC%88%E6%B2%B3%E5%8C%97%E5%BD%A9%E8%8A%B1%EF%BC%89/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%A5%93%E3%81%B5%E3%81%86%E3%81%82/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E9%B7%B2%E5%B0%BE%E3%82%81%E3%81%84/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%B0%8F%E5%AE%B5%E3%81%93%E3%81%AA%E3%82%93/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%B1%90%E4%B8%96%EF%BC%88%E6%9C%89%E6%A0%96%E8%8A%B1%E3%81%82%E3%81%8B%EF%BC%89/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E7%BE%BD%E5%92%B2%E3%81%BF%E3%81%AF%E3%82%8B/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%B0%8F%E5%80%89%E4%B8%83%E6%B5%B7/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%A4%95%E7%BE%8E%E3%81%97%E3%81%8A%E3%82%93/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%A7%99%E3%81%84%E3%81%9A%E3%81%AA/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%B9%B8%E6%9D%91%E6%B3%89%E5%B8%8C/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E7%9F%B3%E5%8E%9F%E5%B8%8C%E6%9C%9B/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%A5%93%E3%82%AB%E3%83%AC%E3%83%B3/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%B1%B1%E5%B2%B8%E3%81%82%E3%82%84%E8%8A%B1%EF%BC%88%E5%B1%B1%E5%B2%B8%E9%80%A2%E8%8A%B1%EF%BC%89/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E4%BC%8A%E8%97%A4%E8%88%9E%E9%9B%AA/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%A1%83%E5%9C%92%E6%80%9C%E5%A5%88/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%96%B0%E5%B7%9D%E7%A9%BA/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E4%BD%90%E5%80%89%E3%82%86%E3%81%9A%E3%81%8D/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%B0%BE%E5%B4%8E%E3%81%88%E3%82%8A%E3%81%8B/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%BD%A9%E5%A5%88%E3%83%AA%E3%83%8A%EF%BC%88%E4%B8%83%E5%8E%9F%E3%81%82%E3%81%8B%E3%82%8A%EF%BC%89/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%A1%9C%E3%81%BF%E3%81%8A/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E7%80%AC%E6%88%B8%E7%92%B0%E5%A5%88/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%8F%8B%E7%94%B0%E7%9C%9F%E5%B8%8C/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E8%B5%A4%E7%80%AC%E5%B0%9A%E5%AD%90/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E7%89%A7%E6%9D%91%E5%BD%A9%E9%A6%99/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%A1%9C%E4%BA%95%E3%82%86%E3%81%BF/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%8A%A0%E5%B1%B1%E3%81%AA%E3%81%A4%E3%81%93/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E4%B8%80%E8%89%B2%E6%A1%83%E5%AD%90/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E9%A2%A8%E9%96%93%E3%82%86%E3%81%BF/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%AD%A6%E8%97%A4%E3%81%82%E3%82%84%E3%81%8B/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E7%A6%8F%E7%94%B0%E3%82%86%E3%81%82/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%B3%A2%E5%A4%9A%E9%87%8E%E7%B5%90%E8%A1%A3/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E4%BE%9D%E6%9C%AC%E3%81%97%E3%81%8A%E3%82%8A/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%96%B0%E6%9D%91%E3%81%82%E3%81%8B%E3%82%8A/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%B7%9D%E8%B6%8A%E3%81%AB%E3%81%93/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E7%BE%8E%E3%83%8E%E5%B6%8B%E3%82%81%E3%81%90%E3%82%8A/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%B0%8F%E7%AC%A0%E5%8E%9F%E8%8F%9C%E4%B9%83/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E7%AF%A0%E7%9C%9F%E6%9C%89/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E9%9F%BF%E4%B9%83%E3%81%86%E3%81%9F/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%A4%A2%E5%AE%9F%E3%81%8B%E3%81%AA%E3%81%88/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E7%AF%A0%E7%94%B0%E3%82%86%E3%81%86/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E8%91%B5%E3%81%84%E3%81%B6%E3%81%8D/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%96%B0%E4%BA%95%E3%83%AA%E3%83%9E/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%B0%8F%E9%87%8E%E5%85%AD%E8%8A%B1/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%9F%8F%E6%9C%A8%E3%81%93%E3%81%AA%E3%81%A4/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%9C%A8%E4%B8%8B%E3%81%B2%E3%81%BE%E3%82%8A%EF%BC%88%E8%8A%B1%E6%B2%A2%E3%81%B2%E3%81%BE%E3%82%8A%EF%BC%89/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%A1%9C%E3%82%86%E3%81%AE/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E4%B8%83%E7%80%AC%E3%82%A2%E3%83%AA%E3%82%B9/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%98%A5%E9%99%BD%E3%83%A2%E3%82%AB/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%9D%BE%E6%9C%AC%E3%81%84%E3%81%A1%E3%81%8B/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E7%BE%8E%E5%9C%92%E5%92%8C%E8%8A%B1/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%A3%AE%E6%97%A5%E5%90%91%E5%AD%90/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E8%8E%89%E3%80%85%E3%81%AF%E3%82%8B%E3%81%8B/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%B2%99%E6%9C%88%E6%81%B5%E5%A5%88/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E9%80%A2%E6%B2%A2%E3%81%BF%E3%82%86/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E4%B9%99%E7%99%BD%E3%81%95%E3%82%84%E3%81%8B/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%AE%8D%E6%88%B8%E9%87%8C%E5%B8%86/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%80%89%E6%9C%AC%E3%81%99%E3%81%BF%E3%82%8C/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%B9%B3%E5%B1%B1%E7%BE%BD%E9%82%A3/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E7%BE%8E%E8%B0%B7%E6%9C%B1%E9%9F%B3%EF%BC%88%E7%BE%8E%E8%B0%B7%E6%9C%B1%E9%87%8C%EF%BC%89/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E9%82%A3%E8%B3%80%E5%B4%8E%E3%82%86%E3%81%8D%E3%81%AD/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%80%89%E6%9C%A8%E3%81%97%E3%81%8A%E3%82%8A/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%9C%9B%E6%9C%88%E3%81%A4%E3%81%BC%E3%81%BF/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%AE%AE%E5%9F%8E%E3%82%8A%E3%81%88/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/Nia%EF%BC%88%E4%BC%8A%E6%9D%B1%E3%82%81%E3%82%8B%EF%BC%89/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E3%81%A4%E3%81%BC%E3%81%BF/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E8%83%A1%E6%A1%83%E3%81%95%E3%81%8F%E3%82%89/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%A4%BF%E3%82%8A%E3%81%8B/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E7%99%BE%E6%B0%B8%E3%81%95%E3%82%8A%E3%81%AA/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%B0%8F%E9%88%B4%E3%81%BF%E3%81%8B%E3%82%93/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E9%9B%A8%E5%AE%AE%E3%81%B2%E3%81%B3%E3%81%8D/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%A8%AA%E5%AE%AE%E4%B8%83%E6%B5%B7/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%A1%9C%E7%A9%BA%E3%82%82%E3%82%82/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/RUU%EF%BC%88%E5%8D%81%E6%9D%9F%E3%82%8B%E3%81%86%EF%BC%89/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%9C%AB%E5%BA%83%E7%B4%94/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%9C%AC%E5%9F%8E%E3%81%AF%E3%81%AA/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E7%B4%AB%E5%A0%82%E3%82%8B%E3%81%84/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%B7%A5%E8%97%A4%E3%83%A9%E3%83%A9/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E7%94%B0%E4%B8%AD%E3%81%AA%E3%81%AA%E5%AE%9F/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E4%BD%90%E8%97%A4%E8%A1%A3%E6%A0%9E/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E8%91%B5%E3%81%A4%E3%81%8B%E3%81%95/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E8%BC%9D%E6%98%9F%E3%81%8D%E3%82%89/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E7%9A%86%E6%9C%88%E3%81%B2%E3%81%8B%E3%82%8B/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%88%9D%E7%BE%8E%E3%81%AA%E3%81%AE%E3%81%8B/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%B0%8F%E6%A2%85%E3%81%88%E3%81%AA/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%A7%AB%E5%92%B2%E3%81%AF%E3%81%AA/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E7%B4%BA%E9%87%8E%E3%81%B2%E3%81%8B%E3%82%8B/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%8C%97%E5%B2%A1%E6%9E%9C%E6%9E%97/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%B0%B4%E5%8E%9F%E3%81%BF%E3%81%9D%E3%81%AE/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E7%BE%BD%E6%9C%88%E4%B9%83%E8%92%BC/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%84%9B%E7%80%AC%E3%82%86%E3%81%86%EF%BC%88%E6%84%9B%E7%80%AC%E3%82%86%E3%81%86%E3%82%8A%EF%BC%89/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%A0%80%E5%8C%97%E5%AE%9F%E6%9D%A5%EF%BC%88%E6%AB%BB%E8%8C%89%E6%97%A5%EF%BC%89/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%B5%B7%E9%87%8E%E3%81%84%E3%81%8F%E3%82%89/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%A4%A9%E9%9F%B3%E3%81%8B%E3%82%93%E3%81%AA/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E9%AB%98%E7%80%AC%E3%82%8A%E3%81%AA/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%98%9F%E5%AE%AE%E3%81%93%E3%81%A8/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%84%9B%E6%89%8D%E3%82%8A%E3%81%82/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%8D%97%E6%97%A5%E8%8F%9C%E4%B9%83/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E4%BC%8A%E7%B9%94%E3%81%B2%E3%81%AA%E3%81%AE/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%84%AA%E6%A2%A8%E3%81%BE%E3%81%84%E3%81%AA/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E9%80%8F%E7%BE%8E%E3%81%8B%E3%81%AA%E3%81%9F/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E9%88%B4%E6%9C%A8%E7%9C%9F%E5%A4%95/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%84%AA%E6%9C%88%E3%81%BE%E3%82%8A%E3%81%AA/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%96%8E%E8%97%A4%E3%81%82%E3%81%BF%E3%82%8A/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E8%98%AD%E3%80%85/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%88%B8%E5%B7%9D%E3%81%AA%E3%81%BF/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%BC%A5%E7%94%9F%E3%81%BF%E3%81%A5%E3%81%8D/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E7%94%B0%E4%B8%AD%E3%81%AD%E3%81%AD/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E8%8A%B9%E6%B2%A2%E3%81%AA%E3%81%8E/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/AIKA/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%A1%9C%E6%9C%A8%E7%BE%8E%E9%9F%B3/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%8F%8B%E7%94%B0%E5%BD%A9%E4%B9%9F%E9%A6%99/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%9C%88%E4%B9%83%E3%83%AB%E3%83%8A/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E8%A5%BF%E9%87%8E%E7%B5%B5%E7%BE%8E/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%90%89%E6%A0%B9%E3%82%86%E3%82%8A%E3%81%82/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%A4%A7%E6%A7%BB%E3%81%B2%E3%81%B3%E3%81%8D/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E8%8A%B1%E6%9F%B3%E6%9D%8F%E5%A5%88/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%A4%A9%E9%A6%AC%E3%82%86%E3%81%84/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%B8%9A%E3%81%BF%E3%81%A4%E3%81%8D/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%B0%8F%E9%82%A3%E6%B5%B7%E3%81%82%E3%82%84/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%BD%A9%E6%9C%88%E4%B8%83%E7%B7%92/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E8%A5%BF%E5%AE%AE%E3%82%86%E3%82%81/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E4%BD%90%E8%97%A4%E6%84%9B%E7%91%A0/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%8D%83%E5%B7%9D%E3%81%A8%E3%82%8F/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%8D%97%E6%A2%9D%E5%BD%A9/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E9%9B%85%E5%AD%90%E3%82%8A%E3%81%AA/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E7%90%A5%E7%8F%80%E3%82%84%E3%82%84/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E5%B0%8F%E9%87%8E%E5%AF%BA%E3%82%86%E3%81%82/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E8%97%A4%E4%BA%95%E3%83%AC%E3%82%A4%E3%83%A9/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E8%8F%8A%E6%B1%A0%E3%81%AF%E3%82%8B/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E6%B9%8A%E6%B3%A2%E6%B5%81/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/actresses/%E9%9D%92%E7%A9%BA%E3%81%B2%E3%81%8B%E3%82%8A/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%83%8F%E3%82%A4%E3%82%AF%E3%82%AA%E3%83%AA%E3%83%86%E3%82%A3VR/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E5%8D%98%E4%BD%93%E4%BD%9C%E5%93%81/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E7%8B%AC%E5%8D%A0%E9%85%8D%E4%BF%A1/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E6%8B%98%E6%9D%9F/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E5%B7%A8%E4%B9%B3/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E4%B8%8D%E5%80%AB/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E6%B8%A9%E6%B3%89/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/VR%E5%B0%82%E7%94%A8/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%83%91%E3%82%A4%E3%82%BA%E3%83%AA/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E7%AB%B6%E6%B3%B3%E3%83%BB%E3%82%B9%E3%82%AF%E3%83%BC%E3%83%AB%E6%B0%B4%E7%9D%80/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E4%B8%BB%E8%A6%B3/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/16%E6%99%82%E9%96%93%E4%BB%A5%E4%B8%8A%E4%BD%9C%E5%93%81/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E4%B8%AD%E5%87%BA%E3%81%97/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%81%8A%E5%A7%89%E3%81%95%E3%82%93/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E7%BE%8E%E5%B0%91%E5%A5%B3/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%83%99%E3%82%B9%E3%83%88%E3%83%BB%E7%B7%8F%E9%9B%86%E7%B7%A8/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/8KVR/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%82%B9%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E7%B4%A0%E4%BA%BA/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%83%95%E3%82%A7%E3%83%A9/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E9%A8%8E%E4%B9%97%E4%BD%8D/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%82%AD%E3%82%B9%E3%83%BB%E6%8E%A5%E5%90%BB/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%83%8F%E3%83%A1%E6%92%AE%E3%82%8A/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E6%89%8B%E3%82%B3%E3%82%AD/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%83%90%E3%82%A4%E3%83%96/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E9%9B%BB%E3%83%9E/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E6%8C%87%E3%83%9E%E3%83%B3/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%82%81%E3%81%8C%E3%81%AD/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%82%A4%E3%83%A9%E3%83%9E%E3%83%81%E3%82%AA/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E6%B7%AB%E4%B9%B1%E3%83%BB%E3%83%8F%E3%83%BC%E3%83%89%E7%B3%BB/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/M%E5%A5%B3/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/OL/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E7%BE%8E%E4%B9%B3/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E5%AF%9D%E5%8F%96%E3%82%8A%E3%83%BB%E5%AF%9D%E5%8F%96%E3%82%89%E3%82%8C%E3%83%BBNTR/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E4%BA%BA%E5%A6%BB%E3%83%BB%E4%B8%BB%E5%A9%A6/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%83%91%E3%82%A4%E3%83%91%E3%83%B3/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/4%E6%99%82%E9%96%93%E4%BB%A5%E4%B8%8A%E4%BD%9C%E5%93%81/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E7%AB%A5%E8%B2%9E/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E7%BE%A9%E6%AF%8D/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E7%86%9F%E5%A5%B3/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E6%B7%AB%E8%AA%9E/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E7%97%B4%E5%A5%B3/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E5%AD%95%E3%81%BE%E3%81%9B/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E6%81%8B%E6%84%9B/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%82%AB%E3%83%83%E3%83%97%E3%83%AB/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E6%BD%AE%E5%90%B9%E3%81%8D/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E5%B7%A8%E5%B0%BB/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%83%8F%E3%83%BC%E3%83%AC%E3%83%A0/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%81%8A%E3%82%82%E3%81%A1%E3%82%83/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%82%A2%E3%82%AF%E3%83%A1%E3%83%BB%E3%82%AA%E3%83%BC%E3%82%AC%E3%82%BA%E3%83%A0/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%81%8A%E9%A2%A8%E5%91%82/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E8%BF%91%E8%A6%AA%E7%9B%B8%E5%A7%A6/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%81%8A%E6%AF%8D%E3%81%95%E3%82%93/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%83%89%E3%83%A9%E3%83%9E/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E5%A5%B3%E5%AD%90%E6%A0%A1%E7%94%9F/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%83%AD%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%BB%E3%82%AA%E3%82%A4%E3%83%AB/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E9%A1%94%E5%B0%84/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E7%9C%8B%E8%AD%B7%E5%A9%A6%E3%83%BB%E3%83%8A%E3%83%BC%E3%82%B9/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E4%BC%81%E7%94%BB/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E8%81%B7%E6%A5%AD%E8%89%B2%E3%80%85/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/3P%E3%83%BB4P/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%83%89%E3%83%A9%E3%83%83%E3%82%B0/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%83%9E%E3%83%83%E3%82%B5%E3%83%BC%E3%82%B8%E3%83%BB%E3%83%AA%E3%83%95%E3%83%AC/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E4%B9%B1%E4%BA%A4/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E5%AD%A6%E7%94%9F%E6%9C%8D/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E5%88%B6%E6%9C%8D/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E7%BE%9E%E6%81%A5/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E9%83%A8%E6%B4%BB%E3%83%BB%E3%83%9E%E3%83%8D%E3%83%BC%E3%82%B8%E3%83%A3%E3%83%BC/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E5%A7%89%E3%83%BB%E5%A6%B9/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E8%B2%A7%E4%B9%B3%E3%83%BB%E5%BE%AE%E4%B9%B3/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%82%AF%E3%83%B3%E3%83%8B/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%83%90%E3%83%83%E3%82%AF/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%82%AA%E3%83%8A%E3%83%8B%E3%83%BC/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E5%B0%BB%E3%83%95%E3%82%A7%E3%83%81/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%82%AE%E3%83%A3%E3%83%AB/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%83%95%E3%82%A1%E3%83%B3%E6%84%9F%E8%AC%9D%E3%83%BB%E8%A8%AA%E5%95%8F/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E5%A5%B3%E6%95%99%E5%B8%AB/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%82%A8%E3%82%B9%E3%83%86/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%83%AC%E3%82%BA%E3%83%93%E3%82%A2%E3%83%B3/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%82%BB%E3%83%BC%E3%83%A9%E3%83%BC%E6%9C%8D/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E5%AE%B6%E5%BA%AD%E6%95%99%E5%B8%AB/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%82%A4%E3%82%BF%E3%82%BA%E3%83%A9/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%82%AD%E3%83%A3%E3%83%90%E5%AC%A2%E3%83%BB%E9%A2%A8%E4%BF%97%E5%AC%A2/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E4%BD%93%E6%93%8D%E7%9D%80%E3%83%BB%E3%83%96%E3%83%AB%E3%83%9E/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%83%AC%E3%82%BA%E3%82%AD%E3%82%B9/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E5%B7%A8%E4%B9%B3%E3%83%95%E3%82%A7%E3%83%81/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%83%93%E3%83%83%E3%83%81/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E8%BE%B1%E3%82%81/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E6%AE%8B%E8%99%90%E8%A1%A8%E7%8F%BE/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%83%A1%E3%82%A4%E3%83%89/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%83%9F%E3%83%8B%E7%B3%BB/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E5%A6%84%E6%83%B3/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E8%A3%B8%E3%82%A8%E3%83%97%E3%83%AD%E3%83%B3/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%82%B3%E3%82%B9%E3%83%97%E3%83%AC/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%82%A2%E3%83%8A%E3%83%AB%E3%82%BB%E3%83%83%E3%82%AF%E3%82%B9/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E6%B4%8B%E3%83%94%E3%83%B3%E3%83%BB%E6%B5%B7%E5%A4%96%E8%BC%B8%E5%85%A5/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%83%81%E3%82%A2%E3%82%AC%E3%83%BC%E3%83%AB/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%83%98%E3%83%AB%E3%82%B9%E3%83%BB%E3%82%BD%E3%83%BC%E3%83%97/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%83%95%E3%82%A1%E3%83%B3%E3%82%BF%E3%82%B8%E3%83%BC/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E6%B0%B4%E7%9D%80/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E7%BD%B5%E5%80%92/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/M%E7%94%B7/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%83%87%E3%83%BC%E3%83%88/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E5%AD%A6%E5%9C%92%E3%82%82%E3%81%AE/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%81%94%E3%81%A3%E3%81%8F%E3%82%93/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E3%83%81%E3%83%A3%E3%82%A4%E3%83%8A%E3%83%89%E3%83%AC%E3%82%B9/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E5%A5%B3%E7%8E%8B%E6%A7%98/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E7%97%85%E9%99%A2%E3%83%BB%E3%82%AF%E3%83%AA%E3%83%8B%E3%83%83%E3%82%AF/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E8%84%9A%E3%83%95%E3%82%A7%E3%83%81/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E9%A3%B2%E5%B0%BF/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E9%AC%BC%E7%95%9C/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/genres/%E5%B9%BC%E3%81%AA%E3%81%98%E3%81%BF/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/tokushu/big-breasts/</loc>
-    <lastmod>2026-05-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/tokushu/harem/</loc>
-    <lastmod>2026-05-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/tokushu/schoolgirl/</loc>
-    <lastmod>2026-05-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/tokushu/mature/</loc>
-    <lastmod>2026-05-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://vr-adb.com/tokushu/m-man/</loc>
-    <lastmod>2026-05-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>

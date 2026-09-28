@@ -21,13 +21,35 @@ function loadJson(filename) {
   return JSON.parse(readFileSync(path, "utf-8"));
 }
 
-function formatDate(dateStr) {
-  if (!dateStr) return new Date().toISOString().split("T")[0];
-  try {
-    return new Date(dateStr).toISOString().split("T")[0];
-  } catch {
-    return new Date().toISOString().split("T")[0];
+/**
+ * DBの日時を lastmod 用の YYYY-MM-DD に変換する。取れなければ null。
+ *
+ * Googleは lastmod を「正確で検証可能な場合のみ」使う。
+ * 日付が取れないときにビルド日を代入すると、更新していないURLまで
+ * 毎回「今日更新された」ことになり、lastmod 全体が信用されなくなる。
+ * そのため不明な場合は値を捏造せず、lastmod 自体を出力しない。
+ */
+function toLastmod(value) {
+  if (!value) return null;
+  const d = new Date(String(value).replace(" ", "T"));
+  if (Number.isNaN(d.getTime())) return null;
+  return d.toISOString().split("T")[0];
+}
+
+/** lastmod があるときだけ該当行を出す */
+function lastmodTag(value, indent = "    ") {
+  const d = toLastmod(value);
+  return d ? `${indent}<lastmod>${d}</lastmod>\n` : "";
+}
+
+/** 配下の作品の最終更新日を、その一覧ページの lastmod として使う */
+function latestUpdatedAt(works) {
+  let latest = null;
+  for (const w of works) {
+    const d = toLastmod(w.updated_at);
+    if (d && (latest === null || d > latest)) latest = d;
   }
+  return latest;
 }
 
 function escapeXml(str) {
@@ -99,11 +121,13 @@ function generateSitemap() {
   // 実際のルーティング（lib/data-loader.ts の convertToWork）は
   // fanza_product_id を id として扱うため、連番を使うと全URLが404になる。
   for (const work of works) {
-    const lastmod = formatDate(work.release_date || work.updated_at);
+    // updated_at を優先する。release_date は「作品の発売日」であって
+    // ページの更新日ではなく、数年前の日付が入ることも多いため、
+    // これを lastmod にするとGoogleに「古いページ」と伝わってしまう。
+    const lastmod = work.updated_at || work.release_date;
     xml += `  <url>
     <loc>${BASE_URL}/works/${work.fanza_product_id}/</loc>
-    <lastmod>${lastmod}</lastmod>
-    <changefreq>weekly</changefreq>
+${lastmodTag(lastmod)}    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
 `;
     if (work.thumbnail_url) {
@@ -117,13 +141,28 @@ function generateSitemap() {
 `;
   }
 
+  // 一覧ページの lastmod は「そこに載る作品の最終更新日」を使う。
+  // 新作が増えたページほど新しい日付になり、Googleの再クロール判断に使える。
+  const worksByActress = new Map();
+  const worksByGenre = new Map();
+  for (const work of works) {
+    for (const name of work.actress_names || []) {
+      if (!worksByActress.has(name)) worksByActress.set(name, []);
+      worksByActress.get(name).push(work);
+    }
+    for (const genre of work.genres || []) {
+      if (!worksByGenre.has(genre)) worksByGenre.set(genre, []);
+      worksByGenre.get(genre).push(work);
+    }
+  }
+
   // 女優特集ページ
   for (const actress of actressFeatures) {
     const encodedName = encodeURIComponent(actress.name);
+    const updated = latestUpdatedAt(worksByActress.get(actress.name) || []);
     xml += `  <url>
     <loc>${BASE_URL}/tokushu/actress/${encodedName}/</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>weekly</changefreq>
+${lastmodTag(updated)}    <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
 `;
@@ -134,10 +173,10 @@ function generateSitemap() {
   for (const actress of actresses) {
     if (!actress.name) continue;
     const encodedName = encodeURIComponent(actress.name);
+    const updated = latestUpdatedAt(worksByActress.get(actress.name) || []);
     xml += `  <url>
     <loc>${BASE_URL}/actresses/${encodedName}/</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>weekly</changefreq>
+${lastmodTag(updated)}    <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 `;
@@ -146,21 +185,22 @@ function generateSitemap() {
   // ジャンルページ
   for (const genre of genres) {
     const encodedGenre = encodeURIComponent(genre);
+    const updated = latestUpdatedAt(worksByGenre.get(genre) || []);
     xml += `  <url>
     <loc>${BASE_URL}/genres/${encodedGenre}/</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>weekly</changefreq>
+${lastmodTag(updated)}    <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
 `;
   }
 
   // 特集ページ
+  // 特集は編集コンテンツで更新日を持たないため lastmod は出さない。
+  // 不明な日付を today で埋めるとlastmod全体の信頼性を落とすため。
   for (const feature of featureRecommendations) {
     const slug = escapeXml(feature.slug);
     xml += `  <url>
     <loc>${BASE_URL}/tokushu/${slug}/</loc>
-    <lastmod>${today}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
